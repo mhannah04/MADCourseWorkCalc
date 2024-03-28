@@ -1,15 +1,26 @@
 package com.example.madcourseworkcalc;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.hardware.TriggerEventListener;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.hardware.SensorManager;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.mariuszgromada.math.mxparser.Expression;
 import org.mariuszgromada.math.mxparser.mXparser;
+
+import java.util.List;
 
 public class calculator extends AppCompatActivity {
 //https://stackoverflow.com/questions/6645537/how-to-detect-the-swipe-left-or-right-in-android
@@ -18,6 +29,37 @@ public class calculator extends AppCompatActivity {
     private TextView degOrRad;
     public boolean chngTrig = false;
     public boolean degOrRadBool = true;
+    private SensorManager mSensorManager;
+
+    private double accelerationValue;
+    private double accelerationPrevious;
+
+    private SensorEventListener sensorEventListener = new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent event) {
+            float x = event.values[0];
+            float y = event.values[1];
+            float z = event.values[2];
+
+            accelerationValue = Math.sqrt((x*x+y*y+z*z));
+            double change= Math.abs(accelerationValue-accelerationPrevious);
+            accelerationPrevious = accelerationValue;
+
+
+
+             if (change > 0.1)
+             {
+                 output.setText("");
+             }
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+        }
+    };
+    private Sensor mAcceletometer;
+
     private float x1, x2;
 
     static final int MIN_DISTANCE=150;
@@ -32,8 +74,23 @@ public class calculator extends AppCompatActivity {
         degOrRad = findViewById(R.id.degRad);
         mXparser.setDegreesMode();
 
+        mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+        mAcceletometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
 
     }
+
+    protected void onResume() {
+        super.onResume();
+        mSensorManager.registerListener(sensorEventListener, mAcceletometer, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    protected void onPause(){
+        super.onPause();
+        mSensorManager.unregisterListener(sensorEventListener);
+    }
+
+
 
     private void updateSum(String input)
     {
@@ -81,6 +138,8 @@ public class calculator extends AppCompatActivity {
         output.setText(answer);
 
     }
+
+
 
     public void num1Pushed(View view) {
         updateSum("1");
