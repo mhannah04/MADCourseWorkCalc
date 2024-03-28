@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MADCourseWorkCalc</string>
+    <string name="AC_button">AC</string>
+    <string name="hint_text">0</string>
+
+    <string-array name="height_array">
+        <item>Feet</item>
+        <item>Inches</item>
+        <item>Metres</item>
+        <item>Centimetres</item>
+        <item>Milimetres</item>
+    </string-array>
+
+
+    <string-array name="test">
+        <item>Light Mode</item>
+        <item>Dark Mode</item>
+    </string-array>
+</resources>
