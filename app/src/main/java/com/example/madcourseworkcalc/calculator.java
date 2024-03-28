@@ -1,38 +1,32 @@
 package com.example.madcourseworkcalc;
 
-import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.hardware.TriggerEventListener;
 import android.os.Bundle;
 import android.view.MotionEvent;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.hardware.SensorManager;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import org.mariuszgromada.math.mxparser.Expression;
 import org.mariuszgromada.math.mxparser.mXparser;
 
-import java.util.List;
 
 public class calculator extends AppCompatActivity {
 //https://stackoverflow.com/questions/6645537/how-to-detect-the-swipe-left-or-right-in-android
     private TextView output;
-
     private TextView degOrRad;
     public boolean chngTrig = false;
     public boolean degOrRadBool = true;
     private SensorManager mSensorManager;
-
     private double accelerationValue;
     private double accelerationPrevious;
+    private Sensor mAcceletometer;
+    private float x1, x2;
+    static final int MIN_DISTANCE=150;
+
 
     private SensorEventListener sensorEventListener = new SensorEventListener() {
         @Override
@@ -43,27 +37,14 @@ public class calculator extends AppCompatActivity {
 
             accelerationValue = Math.sqrt((x*x+y*y+z*z));
             double change= Math.abs(accelerationValue-accelerationPrevious);
-            accelerationPrevious = accelerationValue;
-
-
-
              if (change > 0.1)
              {
                  output.setText("");
              }
         }
-
         @Override
-        public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-        }
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {}
     };
-    private Sensor mAcceletometer;
-
-    private float x1, x2;
-
-    static final int MIN_DISTANCE=150;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,8 +57,6 @@ public class calculator extends AppCompatActivity {
 
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         mAcceletometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-
-
     }
 
     protected void onResume() {
@@ -106,9 +85,6 @@ public class calculator extends AppCompatActivity {
                 formattedSum.append(input.charAt(i - oldSum.length()));
             }
         }
-
-
-
         output.setText(formattedSum.toString());
     }
 
@@ -123,10 +99,7 @@ public class calculator extends AppCompatActivity {
         sum = sum.replaceAll("÷", "/");
         sum = sum.replaceAll("÷", "/");
 
-
-
         Expression  expression = new Expression(sum);
-
 
         String answer = String.valueOf(expression.calculate());
 
@@ -134,46 +107,22 @@ public class calculator extends AppCompatActivity {
         {
             answer = new String("Error");
         }
-
         output.setText(answer);
-
     }
 
 
-
-    public void num1Pushed(View view) {
-        updateSum("1");
-    }
-    public void num2Pushed(View view) {
-        updateSum("2");
-    }
-    public void num3Pushed(View view) {
-        updateSum("3");
-    }
-    public void num4Pushed(View view) {
-        updateSum("4");
-    }
-    public void num5Pushed(View view) {
-        updateSum("5");
-    }
-    public void num6Pushed(View view) {
-        updateSum("6");
-    }
-    public void num7Pushed(View view) {
-        updateSum("7");
-    }
-    public void num8Pushed(View view) {
-        updateSum("8");
-    }
-    public void num9Pushed(View view) {
-        updateSum("9");
-    }
-    public void num0Pushed(View view) {
-        updateSum("0");
-    }
+    public void num1Pushed(View view) {updateSum("1");}
+    public void num2Pushed(View view) {updateSum("2");}
+    public void num3Pushed(View view) {updateSum("3");}
+    public void num4Pushed(View view) {updateSum("4");}
+    public void num5Pushed(View view) {updateSum("5");}
+    public void num6Pushed(View view) {updateSum("6");}
+    public void num7Pushed(View view) {updateSum("7");}
+    public void num8Pushed(View view) {updateSum("8");}
+    public void num9Pushed(View view) {updateSum("9");}
+    public void num0Pushed(View view) {updateSum("0");}
     public void plusPushed(View view) { updateSum("+");}
     public void subtractPushed(View view) { updateSum("-");}
-
     public void timesPushed(View view) {updateSum("X");}
     public void divPushed(View view) { updateSum("÷");}
     public void opnBrktPushed(View view) {updateSum("(");}
@@ -257,27 +206,27 @@ public class calculator extends AppCompatActivity {
         Button button_sin = findViewById(R.id.button_sin);
 
         if (button_sin.getText().toString().equals("sin")) {
-            updateSum("sin");
+            updateSum("sin(");
         } else {
-            updateSum("sin⁻¹");
+            updateSum("sin⁻¹(");
         }
     }
     public void cosPushed(View view) {
         Button button_cos = findViewById(R.id.button_cos);
 
         if (button_cos.getText().toString().equals("cos")) {
-            updateSum("cos");
+            updateSum("cos(");
         } else {
-            updateSum("cos⁻¹");
+            updateSum("cos⁻¹(");
         }
     }
     public void tanPushed(View view) {
         Button button_tan = findViewById(R.id.button_tan);
 
         if (button_tan.getText().toString().equals("tan")) {
-            updateSum("tan");
+            updateSum("tan(");
         } else {
-            updateSum("tan⁻¹");
+            updateSum("tan⁻¹(");
         }
     }
     public void ePushed(View view) {}
@@ -306,35 +255,33 @@ public class calculator extends AppCompatActivity {
     public void sinhPushed(View view) {
         Button button_sinh = findViewById(R.id.button_sinh);
 
-        if (button_sinh.getText().toString().equals("sinh")) {
-            updateSum("sinh");
+        if (button_sinh.getText().toString().equals("sinh(")) {
+            updateSum("sinh(");
         } else {
-            updateSum("sinh⁻¹");
+            updateSum("sinh⁻¹(");
         }
     }
     public void coshPushed(View view) {
         Button button_cosh = findViewById(R.id.button_cosh);
 
         if (button_cosh.getText().toString().equals("cosh")) {
-            updateSum("cosh");
+            updateSum("cosh(");
         } else {
-            updateSum("cosh⁻¹");
+            updateSum("cosh⁻¹(");
         }
     }
     public void tanhPushed(View view) {
         Button button_tanh = findViewById(R.id.button_tanh);
 
         if (button_tanh.getText().toString().equals("tanh")) {
-            updateSum("tanh");
+            updateSum("tanh(");
         } else {
-            updateSum("tanh⁻¹");
+            updateSum("tanh⁻¹(");
         }
     }
     public void piPushed(View view) {}
     public void RandPushed(View view) {}
-
     public void decPushed(View view){ updateSum(".");}
-
 
     @Override
     public boolean onTouchEvent(MotionEvent swipe){
