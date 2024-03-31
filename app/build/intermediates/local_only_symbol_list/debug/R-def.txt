@@ -84,6 +84,7 @@ id gameTextView
 id homeButton
 id homeButton2
 id numberEditText
+id progressBar
 id questionBox
 id spinner1
 id spinner2

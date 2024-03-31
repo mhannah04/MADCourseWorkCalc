@@ -9,6 +9,7 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,12 +19,14 @@ import java.util.Random;
 
 public class GamePT2 extends AppCompatActivity {
     TextView Timer;
+    ProgressBar progressBar;
     private boolean isPaused = false;
     private long pausedTime = 0;
     EditText answerBox;
     Button startTimerButton;
     Button submitButton;
     private long elapsedTime = 0;
+    int progressBarInt =0;
 
     CountDownTimer countUpTimer;
     TextView questionBox;
@@ -41,6 +44,7 @@ public class GamePT2 extends AppCompatActivity {
         startTimerButton = findViewById(R.id.startButton);
         submitButton = findViewById(R.id.submitButton);
         answerBox = findViewById(R.id.answerBox);
+        progressBar = findViewById(R.id.progressBar);
 
         for (int i = 0; i < 12; i++) {
             numbers.add(i + 1);
@@ -54,6 +58,8 @@ public class GamePT2 extends AppCompatActivity {
                 startTimer();
                 startTimerButton.setVisibility(View.GONE);
                 submitButton.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
+
                 questionBox.setText((String.valueOf(practiseGame.reqNum.getText()))+" X "+numbers.get(0));
             }
 
@@ -72,15 +78,18 @@ public class GamePT2 extends AppCompatActivity {
                         else if ((Integer.parseInt(String.valueOf(answerBox.getText()))) == (Integer.parseInt(String.valueOf(practiseGame.reqNum.getText())))*numbers.get(0))
                         {
                             numbers.remove(0);
+                            progressBarInt++;
                             questionBox.setText((String.valueOf(practiseGame.reqNum.getText()))+" X "+numbers.get(0));
+                            progressBar.setProgress(progressBarInt);
+
                         }
                         else{
-                            Toast.makeText(GamePT2.this, "test", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(GamePT2.this, "WRONG ANSWER TRY AGAIN", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else {
-                        Toast.makeText(GamePT2.this, "LIST EMPTY", Toast.LENGTH_SHORT).show();
                         questionBox.setText("You win!");
+                        progressBar.setProgress(progressBarInt+1);
                         pauseTimer();
                     }
                 }
@@ -125,3 +134,6 @@ public class GamePT2 extends AppCompatActivity {
         }
     }
 }
+
+
+

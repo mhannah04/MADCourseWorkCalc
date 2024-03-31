@@ -48,6 +48,10 @@
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\layout\\activity_main.xml"
     },
     {
+        "merged": "com.example.madcourseworkcalc.app-merged_res-31:/layout_activity_game_pt2.xml.flat",
+        "source": "com.example.madcourseworkcalc.app-main-33:/layout/activity_game_pt2.xml"
+    },
+    {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
@@ -86,9 +90,5 @@
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-hdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.madcourseworkcalc.app-merged_res-31:/layout_activity_calculator.xml.flat",
-        "source": "com.example.madcourseworkcalc.app-main-33:/layout/activity_calculator.xml"
     }
 ]
