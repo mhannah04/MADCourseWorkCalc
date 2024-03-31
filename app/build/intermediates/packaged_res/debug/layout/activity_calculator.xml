@@ -303,6 +303,7 @@
     </LinearLayout>
 
     <TextView
+        android:text=""
             android:id="@+id/textView"
             android:freezesText="true"
             android:layout_width="fill_parent"

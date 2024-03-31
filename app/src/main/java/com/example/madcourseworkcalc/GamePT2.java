@@ -80,7 +80,7 @@ public class GamePT2 extends AppCompatActivity {
                     }
                     else {
                         Toast.makeText(GamePT2.this, "LIST EMPTY", Toast.LENGTH_SHORT).show();
-                        questionBox.setText("game over");
+                        questionBox.setText("You win!");
                         pauseTimer();
                     }
                 }
