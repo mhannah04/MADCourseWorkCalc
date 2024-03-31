@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/backgroundColor"
+        tools:context=".calculator">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/buttons_layout">
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_AC_Vert"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="#a5a5a5"
+                android:onClick="acPushed"
+                android:text="@string/AC_button"
+                android:textColor="#090909"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" 
+                android:padding="0dp"/>
+
+            <Button
+                android:id="@+id/button_PN_Vert"
+                android:padding="0dp"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="#a5a5a5"
+                android:onClick="pnPushed"
+                android:text="⁺/-"
+                android:textColor="#090909"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_percentage_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="#a5a5a5"
+                android:onClick="percentagePushed"
+                android:text="%"
+                android:textColor="#090909"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_divide_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:onClick="divPushed"
+                android:text="÷"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_7_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:onClick="num7Pushed"
+                android:text="7"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_8_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:onClick="num8Pushed"
+                android:text="8"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_9_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:onClick="num9Pushed"
+                android:text="9"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_multiply_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:onClick="timesPushed"
+                android:text="X"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_4_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:onClick="num4Pushed"
+                android:text="4"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_5_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:onClick="num5Pushed"
+                android:text="5"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_6_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:onClick="num6Pushed"
+                android:text="6"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_minus_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:onClick="subtractPushed"
+                android:text="-"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_1_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:onClick="num1Pushed"
+                android:text="1"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_2_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:onClick="num2Pushed"
+                android:text="2"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_3_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:onClick="num3Pushed"
+                android:text="3"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_plus_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:onClick="plusPushed"
+                android:text="+"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_0_Vert"
+                
+                android:layout_width="168dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:onClick="num0Pushed"
+                android:text="0"
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_dec_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:onClick="decPushed"
+                android:text="."
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+            <Button
+                android:id="@+id/button_equals_Vert"
+                
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="12dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:onClick="equPushed"
+                android:text="="
+                android:textColor="?attr/android:textColor"
+                android:textSize="21dp"
+                app:cornerRadius="36dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/textView"
+            android:freezesText="true"
+            android:layout_width="fill_parent"
+            android:maxLines="1"
+            android:layout_height="72dp"
+            android:layout_above="@id/buttons_layout"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="bottom|end"
+            android:textSize="72dp"
+            android:textColorHint="?attr/android:textColor"
+            android:hint="0"
+            android:textColor="?attr/android:textColor"
+
+    />
+
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.MADCourseWorkCalc" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+
+        <item name="backgroundTint">#3f3f3f</item>
+        <item name="backgroundColor">#121212</item>
+        <item name="color">#B3DF72</item>
+        <item name="colorPrimary">#B8ACF6</item>
+        <item name="colorButtonNormal">#9DD9EE</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+</resources>
