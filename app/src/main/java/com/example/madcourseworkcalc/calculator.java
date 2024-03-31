@@ -27,7 +27,6 @@ public class calculator extends AppCompatActivity {
     private float x1, x2;
     static final int MIN_DISTANCE=150;
 
-
     private SensorEventListener sensorEventListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
@@ -37,7 +36,7 @@ public class calculator extends AppCompatActivity {
 
             accelerationValue = Math.sqrt((x*x+y*y+z*z));
             double change= Math.abs(accelerationValue-accelerationPrevious);
-             if (change > 0.1)
+             if (change > 15)
              {
                  output.setText("");
              }
@@ -68,8 +67,6 @@ public class calculator extends AppCompatActivity {
         super.onPause();
         mSensorManager.unregisterListener(sensorEventListener);
     }
-
-
 
     private void updateSum(String input)
     {
