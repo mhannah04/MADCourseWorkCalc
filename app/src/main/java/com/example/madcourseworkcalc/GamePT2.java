@@ -9,6 +9,7 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import java.util.Random;
 
 public class GamePT2 extends AppCompatActivity {
     TextView Timer;
+    ImageView imageView3;
     ProgressBar progressBar;
     private boolean isPaused = false;
     private long pausedTime = 0;
@@ -28,6 +30,7 @@ public class GamePT2 extends AppCompatActivity {
     private long elapsedTime = 0;
     int progressBarInt =0;
 
+    CountDownTimer countDownTimer;
     CountDownTimer countUpTimer;
     TextView questionBox;
 
@@ -45,6 +48,7 @@ public class GamePT2 extends AppCompatActivity {
         submitButton = findViewById(R.id.submitButton);
         answerBox = findViewById(R.id.answerBox);
         progressBar = findViewById(R.id.progressBar);
+        imageView3 = findViewById(R.id.imageView3);
 
         for (int i = 0; i < 12; i++) {
             numbers.add(i + 1);
@@ -59,7 +63,6 @@ public class GamePT2 extends AppCompatActivity {
                 startTimerButton.setVisibility(View.GONE);
                 submitButton.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.VISIBLE);
-
                 questionBox.setText((String.valueOf(practiseGame.reqNum.getText()))+" X "+numbers.get(0));
             }
 
@@ -84,7 +87,7 @@ public class GamePT2 extends AppCompatActivity {
 
                         }
                         else{
-                            Toast.makeText(GamePT2.this, "WRONG ANSWER TRY AGAIN", Toast.LENGTH_SHORT).show();
+                            penaltyTimer();
                         }
                     }
                     else {
@@ -117,6 +120,31 @@ public class GamePT2 extends AppCompatActivity {
             }
         }.start();
     }
+
+    private void penaltyTimer() {
+        countDownTimer = new CountDownTimer(5000, 1000) { // Change 10000 to 5000
+            @Override
+            public void onTick(long millisUntilFinished) {
+                long seconds = (millisUntilFinished / 1000) % 60;
+                imageView3.setVisibility(View.VISIBLE);
+                submitButton.setVisibility(View.GONE);
+                progressBar.setVisibility(View.GONE);
+                answerBox.setVisibility(View.GONE);
+                questionBox.setVisibility(View.GONE);
+                Timer.bringToFront();
+            }
+
+            @Override
+            public void onFinish() {
+                imageView3.setVisibility(View.GONE);
+                submitButton.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
+                answerBox.setVisibility(View.VISIBLE);
+                questionBox.setVisibility(View.VISIBLE);
+            }
+        }.start(); // Start the timer immediately after it's created
+    }
+
 
     private void pauseTimer() {
         isPaused = true;

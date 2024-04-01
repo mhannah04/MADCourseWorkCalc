@@ -83,6 +83,7 @@ id editText2
 id gameTextView
 id homeButton
 id homeButton2
+id imageView3
 id numberEditText
 id progressBar
 id questionBox
