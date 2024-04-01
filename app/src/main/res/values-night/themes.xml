@@ -10,5 +10,7 @@
         <item name ="buttonType3">#9DD9EE</item>
         <item name ="buttonType4">#a5a5a5</item>
         <item name ="textColour">#FFFFFF</item>
+        <item name="tableColour1">#404040</item>
+        <item name="tableColour2">#737373</item>
     </style>
 </resources>

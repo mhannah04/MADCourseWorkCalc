@@ -1146,6 +1146,8 @@ attr tabStyle
 attr tabTextAppearance
 attr tabTextColor
 attr tabUnboundedRipple
+attr tableColour1
+attr tableColour2
 attr targetId
 attr telltales_tailColor
 attr telltales_tailScale
@@ -3074,7 +3076,21 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable table_border
+drawable table_bottom_center
+drawable table_bottom_center_alt
+drawable table_bottom_left
+drawable table_bottom_left_alt
+drawable table_bottom_right
+drawable table_bottom_right_alt
+drawable table_center
+drawable table_center_alt
+drawable table_left
+drawable table_left_alt
+drawable table_right
+drawable table_right_alt
+drawable table_top_center
+drawable table_top_left
+drawable table_top_right
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3287,6 +3303,8 @@ id custom
 id customPanel
 id cut
 id dateColumn
+id dateFive
+id dateFour
 id dateOne
 id dateThree
 id dateTwo
@@ -3459,6 +3477,8 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id nameColumn
+id nameFive
+id nameFour
 id nameOne
 id nameThree
 id nameTwo
@@ -3481,6 +3501,8 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id numbColumn
+id numbFive
+id numbFour
 id numbOne
 id numbThree
 id numbTwo
@@ -3636,6 +3658,8 @@ id textinput_suffix_text
 id thirdButton
 id time
 id timeColumn
+id timeFive
+id timeFour
 id timeOne
 id timeThree
 id timeTwo

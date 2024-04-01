@@ -4,15 +4,21 @@ import static java.util.Collections.swap;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -27,6 +33,7 @@ public class GamePT2 extends AppCompatActivity {
     EditText answerBox;
     Button startTimerButton;
     Button submitButton;
+    TableLayout scoresTable;
     private long elapsedTime = 0;
     int progressBarInt =0;
 
@@ -49,6 +56,8 @@ public class GamePT2 extends AppCompatActivity {
         answerBox = findViewById(R.id.answerBox);
         progressBar = findViewById(R.id.progressBar);
         imageView3 = findViewById(R.id.imageView3);
+        scoresTable = findViewById(R.id.scoresTable);
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 
         for (int i = 0; i < 12; i++) {
             numbers.add(i + 1);
@@ -62,6 +71,7 @@ public class GamePT2 extends AppCompatActivity {
                 startTimer();
                 startTimerButton.setVisibility(View.GONE);
                 submitButton.setVisibility(View.VISIBLE);
+                answerBox.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.VISIBLE);
                 questionBox.setText((String.valueOf(practiseGame.reqNum.getText()))+" X "+numbers.get(0));
             }
@@ -94,10 +104,30 @@ public class GamePT2 extends AppCompatActivity {
                         questionBox.setText("You win!");
                         progressBar.setProgress(progressBarInt+1);
                         pauseTimer();
+
+                        submitButton.setVisibility(View.GONE);
+                        answerBox.setVisibility(View.GONE);
+                        scoresTable.setVisibility(View.VISIBLE);
+
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(answerBox.getWindowToken(), 0);
+
                     }
                 }
 
         });
+    }
+
+
+    public static void hideKeyboard(GamePT2 activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(GamePT2.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     private void startTimer() {

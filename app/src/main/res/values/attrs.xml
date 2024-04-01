@@ -6,4 +6,8 @@
     <attr name="buttonType4" format="color" />
     <attr name="textColour" format="color" />
     <attr name="backgroundColour" format="color" />
+    <attr name="tableColour1" format="color" />
+    <attr name="tableColour2" format="color" />
+
+
 </resources>

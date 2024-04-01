@@ -1145,6 +1145,8 @@ int attr tabStyle 0x7f040427
 int attr tabTextAppearance 0x7f040428
 int attr tabTextColor 0x7f040429
 int attr tabUnboundedRipple 0x7f04042a
+int attr tableColour1 0x7f0404df
+int attr tableColour2 0x7f0404e0
 int attr targetId 0x7f04042b
 int attr telltales_tailColor 0x7f04042c
 int attr telltales_tailScale 0x7f04042d
@@ -3073,7 +3075,21 @@ int drawable notification_template_icon_bg 0x7f0800d8
 int drawable notification_template_icon_low_bg 0x7f0800d9
 int drawable notification_tile_bg 0x7f0800da
 int drawable notify_panel_notification_icon_bg 0x7f0800db
-int drawable table_border 0x7f0800dc
+int drawable table_bottom_center 0x7f0800e0
+int drawable table_bottom_center_alt 0x7f0800e1
+int drawable table_bottom_left 0x7f0800e2
+int drawable table_bottom_left_alt 0x7f0800e3
+int drawable table_bottom_right 0x7f0800e4
+int drawable table_bottom_right_alt 0x7f0800e5
+int drawable table_center 0x7f0800e6
+int drawable table_center_alt 0x7f0800e7
+int drawable table_left 0x7f0800e8
+int drawable table_left_alt 0x7f0800e9
+int drawable table_right 0x7f0800ea
+int drawable table_right_alt 0x7f0800eb
+int drawable table_top_center 0x7f0800ec
+int drawable table_top_left 0x7f0800ed
+int drawable table_top_right 0x7f0800ee
 int drawable test_level_drawable 0x7f0800dd
 int drawable tooltip_frame_dark 0x7f0800de
 int drawable tooltip_frame_light 0x7f0800df
@@ -3286,6 +3302,8 @@ int id custom 0x7f0900cd
 int id customPanel 0x7f0900ce
 int id cut 0x7f0900cf
 int id dateColumn 0x7f0900d0
+int id dateFive 0x7f090257
+int id dateFour 0x7f090258
 int id dateOne 0x7f0900d1
 int id dateThree 0x7f0900d2
 int id dateTwo 0x7f0900d3
@@ -3458,6 +3476,8 @@ int id mtrl_picker_title_text 0x7f090179
 int id mtrl_view_tag_bottom_padding 0x7f09017a
 int id multiply 0x7f09017b
 int id nameColumn 0x7f09017c
+int id nameFive 0x7f090259
+int id nameFour 0x7f09025a
 int id nameOne 0x7f09017d
 int id nameThree 0x7f09017e
 int id nameTwo 0x7f09017f
@@ -3480,6 +3500,8 @@ int id notification_background 0x7f09018f
 int id notification_main_column 0x7f090190
 int id notification_main_column_container 0x7f090191
 int id numbColumn 0x7f090192
+int id numbFive 0x7f09025b
+int id numbFour 0x7f09025c
 int id numbOne 0x7f090193
 int id numbThree 0x7f090194
 int id numbTwo 0x7f090195
@@ -3635,6 +3657,8 @@ int id textinput_suffix_text 0x7f09022a
 int id thirdButton 0x7f09022b
 int id time 0x7f09022c
 int id timeColumn 0x7f09022d
+int id timeFive 0x7f09025d
+int id timeFour 0x7f09025e
 int id timeOne 0x7f09022e
 int id timeThree 0x7f09022f
 int id timeTwo 0x7f090230

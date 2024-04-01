@@ -9,6 +9,8 @@
         <item name="buttonType3">#826EB4</item>
         <item name="buttonType4">#a5a5a5</item>
         <item name="textColour">#000000</item>
+        <item name="tableColour1">#d9d9d9</item>
+        <item name="tableColour2">#FFFFFF</item>
 
     </style>
 

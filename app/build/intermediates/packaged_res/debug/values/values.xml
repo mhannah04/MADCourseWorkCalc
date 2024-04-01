@@ -11,6 +11,14 @@
         <item>Light Mode</item>
         <item>Dark Mode</item>
     </string-array>
+    <attr format="color" name="backgroundColour"/>
+    <attr format="color" name="buttonType1"/>
+    <attr format="color" name="buttonType2"/>
+    <attr format="color" name="buttonType3"/>
+    <attr format="color" name="buttonType4"/>
+    <attr format="color" name="tableColour1"/>
+    <attr format="color" name="tableColour2"/>
+    <attr format="color" name="textColour"/>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="AC_button">AC</string>
@@ -19,12 +27,14 @@
     <style name="Base.Theme.MADCourseWorkCalc" parent="Theme.Material3.DayNight.NoActionBar">
         
 
-        <item name="backgroundTint">#009f00</item>
-        <item name="backgroundColor">#FFFFFF</item>
-        <item name="color">#7ca46c</item>
-        <item name="colorPrimary">#f451ba</item>
-        <item name="colorButtonNormal">#738ba3</item>
-        <item name="android:textColor">#000000</item>
+        <item name="backgroundColour">#FFFFFF</item>
+        <item name="buttonType1">#7ca46c</item>
+        <item name="buttonType2">#738ba3</item>
+        <item name="buttonType3">#826EB4</item>
+        <item name="buttonType4">#a5a5a5</item>
+        <item name="textColour">#000000</item>
+        <item name="tableColour1">#d9d9d9</item>
+        <item name="tableColour2">#FFFFFF</item>
 
     </style>
     <style name="Theme.MADCourseWorkCalc" parent="Base.Theme.MADCourseWorkCalc"/>

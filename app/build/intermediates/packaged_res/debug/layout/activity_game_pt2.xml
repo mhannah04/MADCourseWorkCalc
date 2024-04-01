@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".GamePT2">
 
+    <!--TODO
+    CHANGE COLOUR OF TOP ROW
+
+    -->
+
     <TextView
         android:id="@+id/clock"
         android:layout_width="wrap_content"
@@ -104,47 +109,31 @@
         />
 
     <TableLayout
+
         android:id="@+id/scoresTable"
-        android:padding="16dp"
-        android:layout_width="415dp"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
         android:layout_height="365dp"
-        android:gravity="center"
         android:background="@color/white"
-        android:stretchColumns="0,1,2,3">
+        android:gravity="center"
+        android:stretchColumns="0,1,2,3,4,5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-            >
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:layout_margin="1dp"
-                android:layout_weight="1"
-                >
-
-
-            </TableRow>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-            >
+            android:layout_weight="1">
 
             <TextView
-
                 android:id="@+id/nameColumn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
-                android:layout_margin="1dp"
 
+                android:background="@drawable/table_top_left"
                 android:gravity="center"
                 android:text=" Name "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -155,8 +144,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
-                android:layout_margin="1dp"
 
+                android:background="@drawable/table_top_center"
                 android:gravity="center"
                 android:outlineProvider="bounds"
                 android:text=" Number "
@@ -168,8 +157,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
-                android:layout_margin="1dp"
 
+                android:background="@drawable/table_top_center"
                 android:gravity="center"
                 android:text=" Time "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -180,8 +169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="3"
-                android:layout_margin="1dp"
-
+                android:background="@drawable/table_top_right"
                 android:gravity="center"
                 android:text=" Date "
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -189,44 +177,40 @@
         </TableRow>
 
         <TableRow
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-
-            >
+            android:layout_weight="1">
 
             <TextView
                 android:id="@+id/nameOne"
-
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
-                android:layout_margin="1dp"
+                android:background="@drawable/table_left"
+
                 android:gravity="center"
-                android:text="NAME1"
-                android:background="@drawable/table_border"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text=""
+
+                />
 
             <TextView
                 android:id="@+id/numbOne"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
-                android:layout_margin="1dp"
+                android:background="@drawable/table_center"
+
                 android:gravity="center"
-                android:text="NUMBER1"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/timeOne"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
-                android:layout_margin="1dp"
+                android:background="@drawable/table_center"
                 android:gravity="center"
-                android:text="TIME1"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="" />
 
 
             <TextView
@@ -234,115 +218,196 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="3"
-                android:layout_margin="1dp"
+                android:background="@drawable/table_right"
+
 
                 android:gravity="center"
-                android:text="DATE1"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="" />
         </TableRow>
 
         <TableRow
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-            >
+
+            android:layout_weight="1">
 
             <TextView
+
                 android:id="@+id/nameTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
-                android:layout_margin="1dp"
 
+                android:background="@drawable/table_left_alt"
                 android:gravity="center"
-                android:text="NAME2"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/numbTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
-                android:layout_margin="1dp"
 
+                android:background="@drawable/table_center_alt"
                 android:gravity="center"
-                android:text="NUMBER2"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/timeTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
-                android:layout_margin="1dp"
-
+                android:background="@drawable/table_center_alt"
                 android:gravity="center"
-                android:text="TIME2"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/dateTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="3"
-                android:layout_margin="1dp"
 
+                android:background="@drawable/table_right_alt"
                 android:gravity="center"
-                android:text="DATE2"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="" />
         </TableRow>
 
         <TableRow
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-            >
+
+            android:layout_weight="1">
 
             <TextView
+
                 android:id="@+id/nameThree"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
-                android:layout_margin="1dp"
-
+                android:background="@drawable/table_left"
                 android:gravity="center"
-                android:text="NAME3"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/numbThree"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
-                android:layout_margin="1dp"
 
+                android:background="@drawable/table_center"
                 android:gravity="center"
-                android:text="NUMBER3"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/timeThree"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
-                android:layout_margin="1dp"
-
+                android:background="@drawable/table_center"
                 android:gravity="center"
-                android:text="TIME3"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/dateThree"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="3"
-                android:layout_margin="1dp"
 
+                android:background="@drawable/table_right"
                 android:gravity="center"
-                android:text="DATE3"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+
+            android:layout_weight="1">
+
+            <TextView
+
+                android:id="@+id/nameFour"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+
+                android:background="@drawable/table_left_alt"
+                android:gravity="center"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/numbFour"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+
+                android:background="@drawable/table_center_alt"
+                android:gravity="center"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/timeFour"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:background="@drawable/table_center_alt"
+                android:gravity="center"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/dateFour"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+
+                android:background="@drawable/table_right_alt"
+                android:gravity="center"
+                android:text="" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/nameFive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+
+                android:background="@drawable/table_bottom_left"
+                android:gravity="center"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/numbFive"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:background="@drawable/table_bottom_center"
+                android:gravity="center"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/timeFive"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+
+                android:background="@drawable/table_bottom_center"
+                android:gravity="center"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/dateFive"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="3"
+
+                android:background="@drawable/table_bottom_right"
+                android:gravity="center"
+                android:text="" />
         </TableRow>
 
     </TableLayout>
