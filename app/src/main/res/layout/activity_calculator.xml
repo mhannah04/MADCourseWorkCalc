@@ -4,7 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?attr/backgroundColor"
+        android:background="?attr/backgroundColour"
         tools:context=".calculator">
     
     <LinearLayout
@@ -27,7 +27,7 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="#a5a5a5"
+                android:backgroundTint="?attr/buttonType4"
                 android:onClick="acPushed"
                 android:text="@string/AC_button"
                 android:textColor="#090909"
@@ -41,7 +41,7 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="#a5a5a5"
+                android:backgroundTint="?attr/buttonType4"
                 android:onClick="pnPushed"
                 android:text="⁺/-"
                 android:textColor="#090909"
@@ -54,7 +54,7 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="#a5a5a5"
+                android:backgroundTint="?attr/buttonType4"
                 android:onClick="percentagePushed"
                 android:text="%"
                 android:textColor="#090909"
@@ -67,10 +67,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/colorPrimary"
+                android:backgroundTint="?attr/buttonType3"
                 android:onClick="divPushed"
                 android:text="÷"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
         </LinearLayout>
@@ -87,10 +87,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num7Pushed"
                 android:text="7"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
 
@@ -100,10 +100,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num8Pushed"
                 android:text="8"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
 
@@ -113,10 +113,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num9Pushed"
                 android:text="9"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
 
@@ -126,10 +126,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/colorPrimary"
+                android:backgroundTint="?attr/buttonType3"
                 android:onClick="timesPushed"
                 android:text="X"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
         </LinearLayout>
@@ -146,10 +146,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num4Pushed"
                 android:text="4"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
 
@@ -159,10 +159,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num5Pushed"
                 android:text="5"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
 
@@ -172,10 +172,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num6Pushed"
                 android:text="6"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
 
@@ -185,10 +185,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/colorPrimary"
+                android:backgroundTint="?attr/buttonType3"
                 android:onClick="subtractPushed"
                 android:text="-"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
         </LinearLayout>
@@ -205,10 +205,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num1Pushed"
                 android:text="1"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
 
@@ -218,10 +218,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num2Pushed"
                 android:text="2"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
 
@@ -231,10 +231,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num3Pushed"
                 android:text="3"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
 
@@ -244,10 +244,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/colorPrimary"
+                android:backgroundTint="?attr/buttonType3"
                 android:onClick="plusPushed"
                 android:text="+"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
         </LinearLayout>
@@ -264,10 +264,10 @@
                 android:layout_width="168dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num0Pushed"
                 android:text="0"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
 
@@ -277,10 +277,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="decPushed"
                 android:text="."
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
 
@@ -290,10 +290,10 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="?attr/colorPrimary"
+                android:backgroundTint="?attr/buttonType3"
                 android:onClick="equPushed"
                 android:text="="
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="21dp"
                 app:cornerRadius="36dp" />
 
@@ -316,9 +316,9 @@
             android:layout_marginBottom="16dp"
             android:gravity="bottom|end"
             android:textSize="72dp"
-            android:textColorHint="?attr/android:textColor"
+            android:textColorHint="?attr/textColour"
             android:hint="0"
-            android:textColor="?attr/android:textColor"
+            android:textColor="?attr/textColour"
 
     />
 

@@ -3,12 +3,12 @@
     <style name="Base.Theme.MADCourseWorkCalc" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- LIGHT MODE -->
 
-        <item name ="backgroundTint">#009f00</item>
-        <item name ="backgroundColor">#FFFFFF</item>
-        <item name ="color">#7ca46c</item>
-        <item name ="colorPrimary">#f451ba</item>
-        <item name ="colorButtonNormal">#738ba3</item>
-        <item name ="android:textColor">#000000</item>
+        <item name="backgroundColour">#FFFFFF</item>
+        <item name="buttonType1">#7ca46c</item>
+        <item name="buttonType2">#738ba3</item>
+        <item name="buttonType3">#826EB4</item>
+        <item name="buttonType4">#a5a5a5</item>
+        <item name="textColour">#000000</item>
 
     </style>
 

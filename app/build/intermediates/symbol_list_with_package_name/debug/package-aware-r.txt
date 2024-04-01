@@ -152,6 +152,7 @@ attr autoTransition
 attr backHandlingEnabled
 attr background
 attr backgroundColor
+attr backgroundColour
 attr backgroundInsetBottom
 attr backgroundInsetEnd
 attr backgroundInsetStart
@@ -233,6 +234,10 @@ attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
+attr buttonType1
+attr buttonType2
+attr buttonType3
+attr buttonType4
 attr cardBackgroundColor
 attr cardCornerRadius
 attr cardElevation
@@ -1190,6 +1195,7 @@ attr textBackgroundRotate
 attr textBackgroundZoom
 attr textColorAlertDialogListItem
 attr textColorSearchUrl
+attr textColour
 attr textEndPadding
 attr textFillColor
 attr textInputFilledDenseStyle
@@ -3068,6 +3074,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable table_border
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3279,6 +3286,10 @@ id currentState
 id custom
 id customPanel
 id cut
+id dateColumn
+id dateOne
+id dateThree
+id dateTwo
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3447,6 +3458,10 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nameColumn
+id nameOne
+id nameThree
+id nameTwo
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3465,6 +3480,10 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id numbColumn
+id numbOne
+id numbThree
+id numbTwo
 id numberEditText
 id off
 id on
@@ -3520,6 +3539,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id scoresTable
 id screen
 id scroll
 id scrollIndicatorDown
@@ -3615,6 +3635,10 @@ id textinput_prefix_text
 id textinput_suffix_text
 id thirdButton
 id time
+id timeColumn
+id timeOne
+id timeThree
+id timeTwo
 id title
 id titleDividerNoCustom
 id title_template

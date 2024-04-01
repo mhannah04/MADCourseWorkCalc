@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="buttonType1" format="color" />
+    <attr name="buttonType2" format="color" />
+    <attr name="buttonType3" format="color" />
+    <attr name="buttonType4" format="color" />
+    <attr name="textColour" format="color" />
+    <attr name="backgroundColour" format="color" />
+</resources>

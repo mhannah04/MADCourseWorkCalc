@@ -4,7 +4,7 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="?attr/backgroundColor"
+                android:background="?attr/backgroundColour"
                 tools:context=".calculator">
 
     <LinearLayout
@@ -28,10 +28,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="opnBrktPushed"
                 android:text="("
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -40,10 +40,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="clsBrktPushed"
                 android:text=")"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -54,11 +54,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="mcPushed"
                 android:text="mc"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -69,11 +69,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="mpPushed"
                 android:text="m+"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -84,11 +84,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="mmPushed"
                 android:text="m-"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -99,11 +99,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="mrPushed"
                 android:text="mr"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -114,7 +114,7 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="#a5a5a5"
+                android:backgroundTint="?attr/buttonType4"
                 android:onClick="acPushed"
                 android:text="AC"
                 android:textColor="#090909"
@@ -128,7 +128,7 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="#a5a5a5"
+                android:backgroundTint="?attr/buttonType4"
                 android:onClick="pnPushed"
                 android:text="⁺/-"
                 android:textColor="#090909"
@@ -140,7 +140,7 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="#a5a5a5"
+                android:backgroundTint="?attr/buttonType4"
                 android:onClick="percentagePushed"
                 android:text="%"
                 android:textColor="#090909"
@@ -152,10 +152,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/colorPrimary"
+                android:backgroundTint="?attr/buttonType3"
                 android:onClick="divPushed"
                 android:text="÷"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -173,10 +173,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="TndPushed"
                 android:text="2ⁿᵈ"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -185,10 +185,10 @@
                     android:layout_width="56dp"
                     android:layout_height="40dp"
                     android:layout_margin="8dp"
-                    android:backgroundTint="?attr/color"
+                    android:backgroundTint="?attr/buttonType1"
                     android:onClick="XSquaredPushed"
                     android:text="x²"
-                    android:textColor="?attr/android:textColor"
+                    android:textColor="?attr/textColour"
                     android:textSize="8dp"
                     app:cornerRadius="36dp"/>
 
@@ -197,10 +197,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="xCubedPushed"
                 android:text="x³"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -209,10 +209,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="xToYPushed"
                 android:text="xʸ"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -221,11 +221,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="eToXPushed"
                 android:text="eˣ"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -236,10 +236,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="tenToXPushed"
                 android:text="10ˣ"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -248,10 +248,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num7Pushed"
                 android:text="7"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -260,10 +260,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num8Pushed"
                 android:text="8"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -272,10 +272,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num9Pushed"
                 android:text="9"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -284,10 +284,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/colorPrimary"
+                android:backgroundTint="?attr/buttonType3"
                 android:onClick="timesPushed"
                 android:text="X"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -305,10 +305,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="oneOverXPushed"
                 android:text="¹⁄ₓ"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -319,11 +319,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="sqrtXPushed"
                 android:text="√x"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -334,11 +334,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="cbrtXPushed"
                 android:text="∛x"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -349,10 +349,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="yRtXPushed"
                 android:text="ʸ√x"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -363,11 +363,11 @@
                 android:padding="0dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="InPushed"
                 android:text="In"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -378,11 +378,11 @@
                 android:layout_margin="8dp"
                 android:maxLines="1"
                 android:padding="0dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="logPushed"
                 android:text="log₁₀"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" /> <!--- fix! -->
 
@@ -392,10 +392,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num4Pushed"
                 android:text="4"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -404,10 +404,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num5Pushed"
                 android:text="5"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -416,10 +416,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num6Pushed"
                 android:text="6"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -428,10 +428,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/colorPrimary"
+                android:backgroundTint="?attr/buttonType3"
                 android:onClick="subtractPushed"
                 android:text="-"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -447,11 +447,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="xFactPushed"
                 android:text="x!"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -462,11 +462,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="sinPushed"
                 android:text="sin"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -477,11 +477,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="cosPushed"
                 android:text="cos"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -490,11 +490,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="tanPushed"
                 android:text="tan"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp"
                 android:maxLines="1"
@@ -505,11 +505,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="ePushed"
                 android:text="e"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -520,10 +520,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="EEPushed"
                 android:text="EE"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -532,10 +532,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num1Pushed"
                 android:text="1"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -544,10 +544,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num2Pushed"
                 android:text="2"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -556,10 +556,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num3Pushed"
                 android:text="3"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -568,10 +568,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/colorPrimary"
+                android:backgroundTint="?attr/buttonType3"
                 android:onClick="plusPushed"
                 android:text="+"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -589,11 +589,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="RadPushed"
                 android:text="Deg"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -603,11 +603,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="sinhPushed"
                 android:text="sinh"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp"
             android:padding="0dp"/>
@@ -619,11 +619,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="coshPushed"
                 android:text="cosh"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -634,11 +634,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="tanhPushed"
                 android:text="tanh"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -648,10 +648,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="piPushed"
                 android:text="𝝅"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -662,11 +662,11 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonType1"
                 android:onClick="RandPushed"
                 android:text="Rand"
                 android:textAllCaps="false"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -675,10 +675,10 @@
                 android:layout_width="128dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="num0Pushed"
                 android:text="0"
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -687,10 +687,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/android:colorButtonNormal"
+                android:backgroundTint="?attr/buttonType2"
                 android:onClick="decPushed"
                 android:text="."
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -699,10 +699,10 @@
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:backgroundTint="?attr/colorPrimary"
+                android:backgroundTint="?attr/buttonType3"
                 android:onClick="equPushed"
                 android:text="="
-                android:textColor="?attr/android:textColor"
+                android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
 
@@ -714,7 +714,7 @@
             android:text=""
             android:textSize="32dp"
             android:maxLines="1"
-            android:textColor="?attr/android:textColor"
+            android:textColor="?attr/textColour"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:layout_above="@id/buttons_layout"
@@ -725,7 +725,7 @@
             android:layout_marginBottom="16dp"
             android:id="@+id/textView"
             android:gravity="bottom|end"
-            android:textColorHint="?attr/android:textColor"
+            android:textColorHint="?attr/textColour"
             android:hint="0"
 
     />
@@ -733,7 +733,7 @@
     <TextView
         android:text="Deg"
         android:id="@+id/degRad"
-        android:textColor="?attr/android:textColor"
+        android:textColor="?attr/textColour"
         android:layout_above="@+id/textView"
         android:layout_marginStart="16dp"
         android:layout_height="32dp"
