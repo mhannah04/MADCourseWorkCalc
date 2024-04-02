@@ -12,8 +12,10 @@ attr tableColour2
 attr textColour
 color black
 color white
+drawable enter_name_textview
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable liner_layout_rounded_corners
 drawable table_bottom_center
 drawable table_bottom_center_alt
 drawable table_bottom_left
@@ -109,9 +111,11 @@ id dateTwo
 id degRad
 id editText1
 id editText2
+id enterName
 id gameTextView
 id homeButton
 id homeButton2
+id imageButton
 id imageView3
 id nameColumn
 id nameFive
@@ -133,6 +137,8 @@ id spinner1
 id spinner2
 id startButton
 id submitButton
+id submitName
+id submitNameButton
 id textView
 id textView2
 id thirdButton
@@ -142,6 +148,7 @@ id timeFour
 id timeOne
 id timeThree
 id timeTwo
+id winningMessage
 layout activity_calculator
 layout activity_converter
 layout activity_game_pt2

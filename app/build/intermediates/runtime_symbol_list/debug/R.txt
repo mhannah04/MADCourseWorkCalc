@@ -2990,6 +2990,7 @@ int drawable design_ic_visibility 0x7f080083
 int drawable design_ic_visibility_off 0x7f080084
 int drawable design_password_eye 0x7f080085
 int drawable design_snackbar_background 0x7f080086
+int drawable enter_name_textview 0x7f0800f0
 int drawable ic_arrow_back_black_24 0x7f080087
 int drawable ic_clear_black_24 0x7f080088
 int drawable ic_clock_black_24dp 0x7f080089
@@ -3004,6 +3005,7 @@ int drawable ic_mtrl_chip_checked_black 0x7f080091
 int drawable ic_mtrl_chip_checked_circle 0x7f080092
 int drawable ic_mtrl_chip_close_circle 0x7f080093
 int drawable ic_search_black_24 0x7f080094
+int drawable liner_layout_rounded_corners 0x7f0800f1
 int drawable m3_avd_hide_password 0x7f080095
 int drawable m3_avd_show_password 0x7f080096
 int drawable m3_bottom_sheet_drag_handle 0x7f080097
@@ -3351,6 +3353,7 @@ int id end 0x7f0900fc
 int id endToStart 0x7f0900fd
 int id enterAlways 0x7f0900fe
 int id enterAlwaysCollapsed 0x7f0900ff
+int id enterName 0x7f09025f
 int id exitUntilCollapsed 0x7f090100
 int id expand_activities_button 0x7f090101
 int id expanded_menu 0x7f090102
@@ -3394,6 +3397,7 @@ int id ifRoom 0x7f090127
 int id ignore 0x7f090128
 int id ignoreRequest 0x7f090129
 int id image 0x7f09012a
+int id imageButton 0x7f090260
 int id imageView3 0x7f09012b
 int id immediateStop 0x7f09012c
 int id included 0x7f09012d
@@ -3620,6 +3624,8 @@ int id stop 0x7f090205
 int id stretch 0x7f090206
 int id submenuarrow 0x7f090207
 int id submitButton 0x7f090208
+int id submitName 0x7f090261
+int id submitNameButton 0x7f090262
 int id submit_area 0x7f090209
 int id supportScrollUp 0x7f09020a
 int id tabMode 0x7f09020b
@@ -3692,6 +3698,7 @@ int id view_tree_view_model_store_owner 0x7f09024b
 int id visible 0x7f09024c
 int id visible_removing_fragment_view_tag 0x7f09024d
 int id west 0x7f09024e
+int id winningMessage 0x7f090263
 int id withText 0x7f09024f
 int id with_icon 0x7f090250
 int id withinBounds 0x7f090251

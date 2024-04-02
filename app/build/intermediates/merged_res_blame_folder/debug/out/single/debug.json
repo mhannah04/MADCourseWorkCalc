@@ -4,6 +4,10 @@
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_bottom_left_alt.xml"
     },
     {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_liner_layout_rounded_corners.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\liner_layout_rounded_corners.xml"
+    },
+    {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
@@ -38,6 +42,10 @@
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_bottom_center.xml.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_bottom_center.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_enter_name_textview.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\enter_name_textview.xml"
     },
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\layout_activity_main.xml.flat",
@@ -82,6 +90,10 @@
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_liner_layour_rounded_corners.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\liner_layour_rounded_corners.xml"
     },
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_left.xml.flat",
