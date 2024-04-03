@@ -29,12 +29,12 @@
 
     <EditText
         android:id="@+id/answerBox"
-        android:visibility="gone"
+
         android:layout_width="181dp"
         android:layout_height="101dp"
         android:gravity="center"
         android:hint="Enter\nNumber"
-        android:inputType="number"
+        android:inputType="none"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,6 +114,7 @@
     <TableLayout
 
         android:id="@+id/scoresTable"
+
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="365dp"
@@ -185,47 +186,45 @@
             android:layout_weight="1">
 
             <TextView
-                android:id="@+id/nameOne"
+                android:id="@+id/name0"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:background="@drawable/table_left"
-
+                android:maxLines="1"
                 android:gravity="center"
-                android:text=""
-
+          
                 />
 
             <TextView
-                android:id="@+id/numbOne"
+                android:id="@+id/numb0"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
                 android:background="@drawable/table_center"
 
                 android:gravity="center"
-                android:text="" />
+               />
 
             <TextView
-                android:id="@+id/timeOne"
+                android:id="@+id/time0"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:background="@drawable/table_center"
                 android:gravity="center"
-                android:text="" />
+             />
 
 
             <TextView
-                android:id="@+id/dateOne"
+                android:id="@+id/date0"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="3"
                 android:background="@drawable/table_right"
 
-
                 android:gravity="center"
-                android:text="" />
+                />
         </TableRow>
 
         <TableRow
@@ -236,43 +235,43 @@
 
             <TextView
 
-                android:id="@+id/nameTwo"
+                android:id="@+id/name1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
 
                 android:background="@drawable/table_left_alt"
                 android:gravity="center"
-                android:text="" />
+           />
 
             <TextView
-                android:id="@+id/numbTwo"
+                android:id="@+id/numb1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
 
                 android:background="@drawable/table_center_alt"
                 android:gravity="center"
-                android:text="" />
+            />
 
             <TextView
-                android:id="@+id/timeTwo"
+                android:id="@+id/time1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:background="@drawable/table_center_alt"
                 android:gravity="center"
-                android:text="" />
+             />
 
             <TextView
-                android:id="@+id/dateTwo"
+                android:id="@+id/date1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="3"
 
                 android:background="@drawable/table_right_alt"
                 android:gravity="center"
-                android:text="" />
+                 />
         </TableRow>
 
         <TableRow
@@ -283,7 +282,7 @@
 
             <TextView
 
-                android:id="@+id/nameThree"
+                android:id="@+id/name2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -292,7 +291,7 @@
                 android:text="" />
 
             <TextView
-                android:id="@+id/numbThree"
+                android:id="@+id/numb2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
@@ -302,7 +301,7 @@
                 android:text="" />
 
             <TextView
-                android:id="@+id/timeThree"
+                android:id="@+id/time2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
@@ -311,7 +310,7 @@
                 android:text="" />
 
             <TextView
-                android:id="@+id/dateThree"
+                android:id="@+id/date2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="3"
@@ -329,7 +328,7 @@
 
             <TextView
 
-                android:id="@+id/nameFour"
+                android:id="@+id/name3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -339,7 +338,7 @@
                 android:text="" />
 
             <TextView
-                android:id="@+id/numbFour"
+                android:id="@+id/numb3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
@@ -349,7 +348,7 @@
                 android:text="" />
 
             <TextView
-                android:id="@+id/timeFour"
+                android:id="@+id/time3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
@@ -358,7 +357,7 @@
                 android:text="" />
 
             <TextView
-                android:id="@+id/dateFour"
+                android:id="@+id/date3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="3"
@@ -374,7 +373,7 @@
             android:layout_weight="1">
 
             <TextView
-                android:id="@+id/nameFive"
+                android:id="@+id/name4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -384,7 +383,7 @@
                 android:text="" />
 
             <TextView
-                android:id="@+id/numbFive"
+                android:id="@+id/numb4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="1"
@@ -393,7 +392,7 @@
                 android:text="" />
 
             <TextView
-                android:id="@+id/timeFive"
+                android:id="@+id/time4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="2"
@@ -403,7 +402,7 @@
                 android:text="" />
 
             <TextView
-                android:id="@+id/dateFive"
+                android:id="@+id/date4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="3"

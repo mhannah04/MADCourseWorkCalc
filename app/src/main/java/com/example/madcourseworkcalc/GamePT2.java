@@ -5,9 +5,11 @@ import static java.util.Collections.swap;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -33,10 +35,10 @@ import java.text.DecimalFormat;
 
 public class GamePT2 extends AppCompatActivity {
 
-    TextView name1, name2, name3, name4, name5;
-    TextView number1, number2, number3, number4, number5;
-    TextView time1, time2, time3, time4, time5;
-    TextView date1, date2, date3, date4, date5;
+    TextView name1, name2, name3, name4, name0;
+    TextView number1, number2, number3, number4, number0;
+    TextView time1, time2, time3, time4, time0;
+    TextView date1, date2, date3, date4, date0;
 
 
 
@@ -62,8 +64,6 @@ public class GamePT2 extends AppCompatActivity {
     CountDownTimer countUpTimer;
     TextView questionBox;
 
-    String[][] matrix = {{"","","",""},{"","","",""},{"","","",""},{"","","",""},{"","","",""}};
-
     ArrayList <Integer> numbers = new ArrayList<Integer>();
 
 
@@ -72,6 +72,9 @@ public class GamePT2 extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_pt2);
+
+
+
 
         Timer = findViewById(R.id.clock);
         questionBox = findViewById(R.id.questionBox);
@@ -86,34 +89,34 @@ public class GamePT2 extends AppCompatActivity {
         submitNameButton = findViewById(R.id.submitNameButton);
         closeLayout = findViewById(R.id.imageButton);
 
-        name1 = findViewById(R.id.nameOne);
-        name2 = findViewById(R.id.nameTwo);
-        name3 = findViewById(R.id.nameThree);
-        name4 = findViewById(R.id.nameFour);
-        name5 = findViewById(R.id.nameFive);
+        name0 = findViewById(R.id.name0);
+        name1 = findViewById(R.id.name1);
+        name2 = findViewById(R.id.name2);
+        name3 = findViewById(R.id.name3);
+        name4 = findViewById(R.id.name4);
 
-        number1 = findViewById(R.id.numbOne);
-        number2 = findViewById(R.id.numbTwo);
-        number3 = findViewById(R.id.numbThree);
-        number4 = findViewById(R.id.numbFour);
-        number5 = findViewById(R.id.numbFive);
+        number0 = findViewById(R.id.numb0);
+        number1 = findViewById(R.id.numb1);
+        number2 = findViewById(R.id.numb2);
+        number3 = findViewById(R.id.numb3);
+        number4 = findViewById(R.id.numb4);
 
-        time1 = findViewById(R.id.timeOne);
-        time2 = findViewById(R.id.timeTwo);
-        time3 = findViewById(R.id.timeThree);
-        time4 = findViewById(R.id.timeFour);
-        time5 = findViewById(R.id.timeFive);
+        time0 = findViewById(R.id.time0);
+        time1 = findViewById(R.id.time1);
+        time2 = findViewById(R.id.time2);
+        time3 = findViewById(R.id.time3);
+        time4 = findViewById(R.id.time4);
 
-        date1 = findViewById(R.id.dateOne);
-        date2 = findViewById(R.id.dateTwo);
-        date3 = findViewById(R.id.dateThree);
-        date4 = findViewById(R.id.dateFour);
-        date5 = findViewById(R.id.dateFive);
-
-
+        date0 = findViewById(R.id.date0);
+        date1 = findViewById(R.id.date1);
+        date2 = findViewById(R.id.date2);
+        date3 = findViewById(R.id.date3);
+        date4 = findViewById(R.id.date4);
 
 
-        for (int i = 0; i < 12; i++) {
+
+
+        for (int i = 0; i < 2; i++) {
             numbers.add(i + 1);
         }
 
@@ -153,8 +156,7 @@ public class GamePT2 extends AppCompatActivity {
                         else{
                             penaltyTimer();
                         }
-                    }
-                    else {
+                    } else {
                         questionBox.setText("You win!");
                         progressBar.setProgress(progressBarInt+1);
                         pauseTimer();
@@ -181,45 +183,36 @@ public class GamePT2 extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
                                 String userInput = enterName.getText().toString();
-
+                                Date c = Calendar.getInstance().getTime();
+                                SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                                String formattedDate = df.format(c);
                                 if (TextUtils.isEmpty(userInput)) {
                                     Toast.makeText(GamePT2.this, "Please enter a name", Toast.LENGTH_SHORT).show();
                                 }
-                                else
-                                {
-                                    relativeLayout.setVisibility(View.GONE);
-                                    scoresTable.setVisibility(View.VISIBLE);
-                                    for (int i=0; i<matrix.length; ++i) {
-                                        for (int j=0; j<matrix[i].length; ++j) {
-                                            matrix[i][j] = String.valueOf(i);
-                                            for(int k=0; k<5; k++) {
-                                                if (name1.getText()!="testing") {
-                                                    name1.setText(enterName.getText());
-                                                    number1.setText((String.valueOf(practiseGame.reqNum.getText())));
-                                                    time1.setText(Timer.getText());
-                                                    Date c = Calendar.getInstance().getTime();
-                                                    SimpleDateFormat df = new SimpleDateFormat("dd/MMM/yyyy", Locale.getDefault());
-                                                    String formattedDate = df.format(c);
-                                                    date1.setText(formattedDate);
-
-                                                }
-                                            }
+                                else {
+                                    for (int j = 0; j < 5; j++) {
+                                        TextView textView = (TextView) findViewById(getResources().getIdentifier("name" + j, "id", getPackageName()));
+                                        String textViewContents = textView.getText().toString();
+                                        if (TextUtils.isEmpty(textViewContents)) {
+                                            ((TextView)findViewById(getResources().getIdentifier("name" + j, "id", getPackageName()))).setText(String.valueOf(enterName.getText()));
+                                            ((TextView)findViewById(getResources().getIdentifier("numb" + j, "id", getPackageName()))).setText(String.valueOf(practiseGame.reqNum.getText()));
+                                            ((TextView)findViewById(getResources().getIdentifier("time" + j, "id", getPackageName()))).setText(String.valueOf(Timer.getText()));
+                                            ((TextView)findViewById(getResources().getIdentifier("date" + j, "id", getPackageName()))).setText(formattedDate);
+                                            break;
                                         }
-                                    }
                                 }
+                                    scoresTable.setVisibility(View.VISIBLE);
+                                    relativeLayout.setVisibility(View.GONE);
 
+                                }
                             }
-
                         });
-
                     }
-                }
-
+            }
         });
+
+
     }
-
-
-
 
     private void startTimer() {
         countUpTimer = new CountDownTimer(Long.MAX_VALUE, 10) {
@@ -282,6 +275,9 @@ public class GamePT2 extends AppCompatActivity {
             swap(a, i, change);
         }
     }
+
+
+
 }
 
 
