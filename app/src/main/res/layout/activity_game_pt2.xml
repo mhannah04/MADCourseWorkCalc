@@ -29,12 +29,12 @@
 
     <EditText
         android:id="@+id/answerBox"
-
+        android:visibility="gone"
         android:layout_width="181dp"
         android:layout_height="101dp"
-        android:gravity="center"
+        android:gravity="bottom"
         android:hint="Enter\nNumber"
-        android:inputType="none"
+        android:inputType="number"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -446,6 +446,7 @@
 
             <EditText
                 android:id="@+id/enterName"
+                android:maxLength="14"
                 android:layout_width="232dp"
                 android:layout_height="64dp"
                 android:layout_alignParentStart="true"

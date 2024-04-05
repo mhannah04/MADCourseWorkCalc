@@ -21,9 +21,12 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
+
 public class GamePT2 extends AppCompatActivity {
 
     private static final String SHAREDPREF_SET="StartTime";
@@ -110,7 +113,7 @@ public class GamePT2 extends AppCompatActivity {
 
 
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 12; i++) {
             numbers.add(i + 1);
         }
 
@@ -132,6 +135,7 @@ public class GamePT2 extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                answerBox.setHint("");
 
                     if (numbers.size() >1)
                     {
@@ -154,7 +158,7 @@ public class GamePT2 extends AppCompatActivity {
                         questionBox.setText("You win!");
                         progressBar.setProgress(progressBarInt+1);
                         pauseTimer();
-
+                        answerBox.setVisibility(View.GONE);
                         submitButton.setVisibility(View.GONE);
                         answerBox.setVisibility(View.GONE);
                         relativeLayout.setVisibility(View.VISIBLE);
@@ -184,39 +188,59 @@ public class GamePT2 extends AppCompatActivity {
                                     Toast.makeText(GamePT2.this, "Please enter a name", Toast.LENGTH_SHORT).show();
                                 }
                                 else {
-                                    for (int j = 0; j < 5; j++) {
-                                        TextView textView = (TextView) findViewById(getResources().getIdentifier("name" + j, "id", getPackageName()));
-                                        String textViewContents = textView.getText().toString();
+                                    List<Player> players = getPlayersFromSharedPreference();
+                                    if (players.size() < 5) {
 
-                                        if (TextUtils.isEmpty(textViewContents)) {
-
-                                            displaySavedPlayer(
-                                                    findViewById(getResources().getIdentifier("name" + j, "id", getPackageName())),
-                                                    findViewById(getResources().getIdentifier("numb" + j, "id", getPackageName())),
-                                                    findViewById(getResources().getIdentifier("time" + j, "id", getPackageName())),
-                                                    findViewById(getResources().getIdentifier("date" + j, "id", getPackageName())));
-
-                                            ((TextView)findViewById(getResources().getIdentifier("name" + (j+1), "id", getPackageName()))).setText(String.valueOf(enterName.getText()));
-                                            ((TextView)findViewById(getResources().getIdentifier("numb" + (j+1), "id", getPackageName()))).setText(String.valueOf(practiseGame.reqNum.getText()));
-                                            ((TextView)findViewById(getResources().getIdentifier("time" + (j+1), "id", getPackageName()))).setText(String.valueOf(Timer.getText()));
-                                            ((TextView)findViewById(getResources().getIdentifier("date" + (j+1), "id", getPackageName()))).setText(formattedDate);
+                                        Player newPlayer = new Player(userInput, String.valueOf(practiseGame.reqNum.getText()), String.valueOf(Timer.getText()), formattedDate);
 
 
-                                            storeLastPlayerFromSharedPreference(
-                                                    findViewById(getResources().getIdentifier("name" + (j+1), "id", getPackageName())),
-                                                    findViewById(getResources().getIdentifier("numb" + (j+1), "id", getPackageName())),
-                                                    findViewById(getResources().getIdentifier("time" + (j+1), "id", getPackageName())),
-                                                    findViewById(getResources().getIdentifier("date" + (j+1), "id", getPackageName())));
+                                        players.add(newPlayer);
 
-                                            break;
+                                        Collections.sort(players, new SortTimes());
+
+
+                                        storePlayersFromSharedPreference(players);
+
+                                        updateTable(players);
+
+                                        scoresTable.setVisibility(View.VISIBLE);
+                                        relativeLayout.setVisibility(View.GONE);
+                                        Timer.setVisibility(View.GONE);
+
+                                    }else {
+                                        Player newPlayer = new Player(userInput, String.valueOf(practiseGame.reqNum.getText()), String.valueOf(Timer.getText()), formattedDate);
+                                        Player incomingPlayer = players.get(4);
+                                        SortTimes Compare = new SortTimes();
+
+                                        if (Compare.compare(newPlayer, incomingPlayer)<0) {
+                                            players.set(4, newPlayer);
+                                            Collections.sort(players, new SortTimes());
+
+                                            storePlayersFromSharedPreference(players);
+                                            updateTable(players);
+                                            scoresTable.setVisibility(View.VISIBLE);
+                                            relativeLayout.setVisibility(View.GONE);
+                                            Timer.setVisibility(View.GONE);
                                         }
-                                }
-                                    scoresTable.setVisibility(View.VISIBLE);
-                                    relativeLayout.setVisibility(View.GONE);
+                                        else if(Compare.compare(newPlayer, incomingPlayer)==0) {
+                                            updateTable(players);
+                                            scoresTable.setVisibility(View.VISIBLE);
+                                            relativeLayout.setVisibility(View.GONE);
+                                            Timer.setVisibility(View.GONE);
+                                            Toast.makeText(GamePT2.this, "So close! Times are exact tie!", Toast.LENGTH_SHORT).show();
+                                        }
+                                        else {
+                                            updateTable(players);
+                                            scoresTable.setVisibility(View.VISIBLE);
+                                            relativeLayout.setVisibility(View.GONE);
+                                            Timer.setVisibility(View.GONE);
+                                            Toast.makeText(GamePT2.this, "Sorry. Too slow!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+
                                 }
                             }
-                        });
-                    }
+                        });                    }
             }
         });
 
@@ -227,7 +251,7 @@ public class GamePT2 extends AppCompatActivity {
         countUpTimer = new CountDownTimer(Long.MAX_VALUE, 10) {
             @Override
             public void onTick(long millisUntilFinished) {
-                elapsedTime += 10; // Incrementing by 10 milliseconds
+                elapsedTime += 10;
 
                 long mins = (elapsedTime / (1000 * 60)) % 60;
                 long secs = (elapsedTime / 1000) % 60;
@@ -245,7 +269,7 @@ public class GamePT2 extends AppCompatActivity {
     }
 
     private void penaltyTimer() {
-        countDownTimer = new CountDownTimer(5000, 1000) { // Change 10000 to 5000
+        countDownTimer = new CountDownTimer(5000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 long seconds = (millisUntilFinished / 1000) % 60;
@@ -265,79 +289,50 @@ public class GamePT2 extends AppCompatActivity {
                 answerBox.setVisibility(View.VISIBLE);
                 questionBox.setVisibility(View.VISIBLE);
             }
-        }.start(); // Start the timer immediately after it's created
+        }.start();
     }
 
-    private void displayCurrentName(TextView name, TextView number, TextView time, TextView date){
-        // Get the array of player information
-        String[] playerInfo = getLastPlayerFromSharedPreference();
-
-        // Extract the name from the array (assuming it's at index 0)
-        String nameText = playerInfo[0];
-        String numberText = playerInfo[1];
-        String timeText = playerInfo[2];
-        String dateText = playerInfo[3];
-
-        // Set the text of the provided TextView to the retrieved name
-        name.setText(nameText);
-        number.setText(numberText);
-        time.setText(timeText);
-        date.setText(dateText);
-    }
-    public void displaySavedPlayer(TextView name, TextView number, TextView time, TextView date){
-        // Get the array of player information
-        String[] playerInfo = getLastPlayerFromSharedPreference();
-
-        // Extract the name from the array (assuming it's at index 0)
-        String nameText = playerInfo[0];
-        String numberText = playerInfo[1];
-        String timeText = playerInfo[2];
-        String dateText = playerInfo[3];
-
-        // Set the text of the provided TextView to the retrieved name
-        name.setText(nameText);
-        number.setText(numberText);
-        time.setText(timeText);
-        date.setText(dateText);
-    }
-
-    private String[] getLastPlayerFromSharedPreference(){
-        SharedPreferences prefs = getSharedPreferences("playerDetails", MODE_PRIVATE);
-        String name = prefs.getString("name", "");
-        String number = prefs.getString("number", "");
-        String time = prefs.getString("time", "");
-        String date = prefs.getString("date", "");
-
-        // Create an array to hold all the information
-        String[] playerInfo = {name, number, time, date};
-
-        return playerInfo;
-    }
-
-    private void storeLastPlayerFromSharedPreference(TextView name, TextView number, TextView time, TextView date){
-        String nameText = name.getText().toString();
-        String numberText = number.getText().toString();
-        String timeText = time.getText().toString();
-        String dateText = date.getText().toString();
-
+    private void storePlayersFromSharedPreference(List<Player> players) {
         SharedPreferences prefs = getSharedPreferences("playerDetails", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
 
-        editor.putString("name", nameText);
-        editor.putString("number", numberText);
-        editor.putString("time", timeText);
-        editor.putString("date", dateText);
+        for (int i = 0; i < players.size(); i++) {
+            Player player = players.get(i);
+            String keyPrefix = "player_" + i + "_";
+            editor.putString(keyPrefix + "name", player.getName());
+            editor.putString(keyPrefix + "number", player.getNumber());
+            editor.putString(keyPrefix + "time", player.getTime());
+            editor.putString(keyPrefix + "date", player.getDate());
+        }
 
-        editor.commit();
+        editor.apply();
     }
 
+    private List<Player> getPlayersFromSharedPreference() {
+        SharedPreferences prefs = getSharedPreferences("playerDetails", MODE_PRIVATE);
+        List<Player> players = new ArrayList<>();
 
+        for (int i = 0; i < 5; i++) {
+            String keyPrefix = "player_" + i + "_";
+            String name = prefs.getString(keyPrefix + "name", "");
+            String number = prefs.getString(keyPrefix + "number", "");
+            String time = prefs.getString(keyPrefix + "time", "");
+            String date = prefs.getString(keyPrefix + "date", "");
+
+            if (!name.isEmpty()) {
+                Player player = new Player(name, number, time, date);
+                players.add(player);
+            }
+        }
+
+        return players;
+    }
 
 
     private void pauseTimer() {
         isPaused = true;
         pausedTime = elapsedTime;
-        countUpTimer.cancel(); // Cancel the current timer
+        countUpTimer.cancel();
     }
 
     public static void shuffleList(ArrayList<Integer> a) {
@@ -350,7 +345,21 @@ public class GamePT2 extends AppCompatActivity {
         }
     }
 
+    private void updateTable(List<Player> players) {
 
+        for (int i = 0; i < players.size(); i++) {
+            Player player = players.get(i);
+            TextView nameTextView = findViewById(getResources().getIdentifier("name" + i, "id", getPackageName()));
+            TextView numberTextView = findViewById(getResources().getIdentifier("numb" + i, "id", getPackageName()));
+            TextView timeTextView = findViewById(getResources().getIdentifier("time" + i, "id", getPackageName()));
+            TextView dateTextView = findViewById(getResources().getIdentifier("date" + i, "id", getPackageName()));
+
+            nameTextView.setText(player.getName());
+            numberTextView.setText(player.getNumber());
+            timeTextView.setText(player.getTime());
+            dateTextView.setText(player.getDate());
+        }
+    }
 
 }
 
