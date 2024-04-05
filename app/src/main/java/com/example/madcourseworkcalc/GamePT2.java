@@ -1,9 +1,7 @@
 package com.example.madcourseworkcalc;
 
 import static java.util.Collections.swap;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,14 +18,12 @@ import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
-
 public class GamePT2 extends AppCompatActivity {
 
     private static final String SHAREDPREF_SET="StartTime";
@@ -72,8 +68,6 @@ public class GamePT2 extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_pt2);
-
-
 
 
         Timer = findViewById(R.id.clock);
@@ -193,21 +187,32 @@ public class GamePT2 extends AppCompatActivity {
                                     for (int j = 0; j < 5; j++) {
                                         TextView textView = (TextView) findViewById(getResources().getIdentifier("name" + j, "id", getPackageName()));
                                         String textViewContents = textView.getText().toString();
+
                                         if (TextUtils.isEmpty(textViewContents)) {
-                                            ((TextView)findViewById(getResources().getIdentifier("name" + j, "id", getPackageName()))).setText(String.valueOf(enterName.getText()));
-                                            ((TextView)findViewById(getResources().getIdentifier("numb" + j, "id", getPackageName()))).setText(String.valueOf(practiseGame.reqNum.getText()));
-                                            ((TextView)findViewById(getResources().getIdentifier("time" + j, "id", getPackageName()))).setText(String.valueOf(Timer.getText()));
-                                            ((TextView)findViewById(getResources().getIdentifier("date" + j, "id", getPackageName()))).setText(formattedDate);
-                                            displayCurrentName(findViewById(getResources().getIdentifier("name"+j,"id",getPackageName())));
-                                            displaySavedName(name3);
-                                            storeLastNameFromSharedPreference(findViewById(getResources().getIdentifier("name"+j,"id",getPackageName())));
+
+                                            displaySavedPlayer(
+                                                    findViewById(getResources().getIdentifier("name" + j, "id", getPackageName())),
+                                                    findViewById(getResources().getIdentifier("numb" + j, "id", getPackageName())),
+                                                    findViewById(getResources().getIdentifier("time" + j, "id", getPackageName())),
+                                                    findViewById(getResources().getIdentifier("date" + j, "id", getPackageName())));
+
+                                            ((TextView)findViewById(getResources().getIdentifier("name" + (j+1), "id", getPackageName()))).setText(String.valueOf(enterName.getText()));
+                                            ((TextView)findViewById(getResources().getIdentifier("numb" + (j+1), "id", getPackageName()))).setText(String.valueOf(practiseGame.reqNum.getText()));
+                                            ((TextView)findViewById(getResources().getIdentifier("time" + (j+1), "id", getPackageName()))).setText(String.valueOf(Timer.getText()));
+                                            ((TextView)findViewById(getResources().getIdentifier("date" + (j+1), "id", getPackageName()))).setText(formattedDate);
+
+
+                                            storeLastPlayerFromSharedPreference(
+                                                    findViewById(getResources().getIdentifier("name" + (j+1), "id", getPackageName())),
+                                                    findViewById(getResources().getIdentifier("numb" + (j+1), "id", getPackageName())),
+                                                    findViewById(getResources().getIdentifier("time" + (j+1), "id", getPackageName())),
+                                                    findViewById(getResources().getIdentifier("date" + (j+1), "id", getPackageName())));
 
                                             break;
                                         }
                                 }
                                     scoresTable.setVisibility(View.VISIBLE);
                                     relativeLayout.setVisibility(View.GONE);
-
                                 }
                             }
                         });
@@ -263,31 +268,70 @@ public class GamePT2 extends AppCompatActivity {
         }.start(); // Start the timer immediately after it's created
     }
 
-    private void displayCurrentName(TextView textView){
-        String text = textView.getText().toString();
-        textView.setText(text);
-    }
-    public void displaySavedName(TextView textView){
-        String lastStartTime = getLastNameFromSharedPreference();
-        String text = lastStartTime;
+    private void displayCurrentName(TextView name, TextView number, TextView time, TextView date){
+        // Get the array of player information
+        String[] playerInfo = getLastPlayerFromSharedPreference();
 
-        TextView texTview = (TextView) findViewById(R.id.textView);
-        textView.setText(text);
+        // Extract the name from the array (assuming it's at index 0)
+        String nameText = playerInfo[0];
+        String numberText = playerInfo[1];
+        String timeText = playerInfo[2];
+        String dateText = playerInfo[3];
+
+        // Set the text of the provided TextView to the retrieved name
+        name.setText(nameText);
+        number.setText(numberText);
+        time.setText(timeText);
+        date.setText(dateText);
+    }
+    public void displaySavedPlayer(TextView name, TextView number, TextView time, TextView date){
+        // Get the array of player information
+        String[] playerInfo = getLastPlayerFromSharedPreference();
+
+        // Extract the name from the array (assuming it's at index 0)
+        String nameText = playerInfo[0];
+        String numberText = playerInfo[1];
+        String timeText = playerInfo[2];
+        String dateText = playerInfo[3];
+
+        // Set the text of the provided TextView to the retrieved name
+        name.setText(nameText);
+        number.setText(numberText);
+        time.setText(timeText);
+        date.setText(dateText);
     }
 
-    private String getLastNameFromSharedPreference(){
-        SharedPreferences prefs = getSharedPreferences(SHAREDPREF_SET, MODE_PRIVATE);
-        String extractedText = prefs.getString(SHAREDPREF_TIME, "");
-        return extractedText;
+    private String[] getLastPlayerFromSharedPreference(){
+        SharedPreferences prefs = getSharedPreferences("playerDetails", MODE_PRIVATE);
+        String name = prefs.getString("name", "");
+        String number = prefs.getString("number", "");
+        String time = prefs.getString("time", "");
+        String date = prefs.getString("date", "");
+
+        // Create an array to hold all the information
+        String[] playerInfo = {name, number, time, date};
+
+        return playerInfo;
     }
 
-    private void storeLastNameFromSharedPreference(TextView textView){
-        String text = textView.getText().toString();
-        SharedPreferences prefs = getSharedPreferences(SHAREDPREF_SET, MODE_PRIVATE);
+    private void storeLastPlayerFromSharedPreference(TextView name, TextView number, TextView time, TextView date){
+        String nameText = name.getText().toString();
+        String numberText = number.getText().toString();
+        String timeText = time.getText().toString();
+        String dateText = date.getText().toString();
+
+        SharedPreferences prefs = getSharedPreferences("playerDetails", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putString(SHAREDPREF_TIME, text);
+
+        editor.putString("name", nameText);
+        editor.putString("number", numberText);
+        editor.putString("time", timeText);
+        editor.putString("date", dateText);
+
         editor.commit();
     }
+
+
 
 
     private void pauseTimer() {
