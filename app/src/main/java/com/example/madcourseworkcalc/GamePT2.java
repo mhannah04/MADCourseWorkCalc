@@ -9,9 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,17 +21,19 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.tabs.TabLayout;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
-import java.text.DecimalFormat;
 
 public class GamePT2 extends AppCompatActivity {
+
+    private static final String SHAREDPREF_SET="StartTime";
+    private static final String SHAREDPREF_TIME="Table";
+
+
 
     TextView name1, name2, name3, name4, name0;
     TextView number1, number2, number3, number4, number0;
@@ -198,6 +198,10 @@ public class GamePT2 extends AppCompatActivity {
                                             ((TextView)findViewById(getResources().getIdentifier("numb" + j, "id", getPackageName()))).setText(String.valueOf(practiseGame.reqNum.getText()));
                                             ((TextView)findViewById(getResources().getIdentifier("time" + j, "id", getPackageName()))).setText(String.valueOf(Timer.getText()));
                                             ((TextView)findViewById(getResources().getIdentifier("date" + j, "id", getPackageName()))).setText(formattedDate);
+                                            displayCurrentName(findViewById(getResources().getIdentifier("name"+j,"id",getPackageName())));
+                                            displaySavedName(name3);
+                                            storeLastNameFromSharedPreference(findViewById(getResources().getIdentifier("name"+j,"id",getPackageName())));
+
                                             break;
                                         }
                                 }
@@ -257,6 +261,32 @@ public class GamePT2 extends AppCompatActivity {
                 questionBox.setVisibility(View.VISIBLE);
             }
         }.start(); // Start the timer immediately after it's created
+    }
+
+    private void displayCurrentName(TextView textView){
+        String text = textView.getText().toString();
+        textView.setText(text);
+    }
+    public void displaySavedName(TextView textView){
+        String lastStartTime = getLastNameFromSharedPreference();
+        String text = lastStartTime;
+
+        TextView texTview = (TextView) findViewById(R.id.textView);
+        textView.setText(text);
+    }
+
+    private String getLastNameFromSharedPreference(){
+        SharedPreferences prefs = getSharedPreferences(SHAREDPREF_SET, MODE_PRIVATE);
+        String extractedText = prefs.getString(SHAREDPREF_TIME, "");
+        return extractedText;
+    }
+
+    private void storeLastNameFromSharedPreference(TextView textView){
+        String text = textView.getText().toString();
+        SharedPreferences prefs = getSharedPreferences(SHAREDPREF_SET, MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(SHAREDPREF_TIME, text);
+        editor.commit();
     }
 
 
