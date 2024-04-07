@@ -29,6 +29,7 @@
 
     <EditText
         android:id="@+id/answerBox"
+        android:maxLength="9"
         android:visibility="gone"
         android:layout_width="181dp"
         android:layout_height="101dp"
