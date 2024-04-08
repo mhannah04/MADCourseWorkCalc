@@ -188,6 +188,9 @@ public class GamePT2 extends AppCompatActivity {
                                     Toast.makeText(GamePT2.this, "Please enter a name", Toast.LENGTH_SHORT).show();
                                 }
                                 else {
+                                    InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                                    imm.hideSoftInputFromWindow(answerBox.getWindowToken(), 0);
+
                                     List<Player> players = getPlayersFromSharedPreference();
                                     if (players.size() < 5) {
 
