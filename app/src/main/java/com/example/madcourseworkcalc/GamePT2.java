@@ -40,7 +40,7 @@ public class GamePT2 extends AppCompatActivity {
     TextView date1, date2, date3, date4, date0;
 
 
-
+    private boolean finalQuestionPassed =false;
 
     TextView Timer;
     ImageView imageView3;
@@ -117,7 +117,10 @@ public class GamePT2 extends AppCompatActivity {
             numbers.add(i + 1);
         }
 
+
         shuffleList(numbers);
+
+
 
         startTimerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,114 +139,111 @@ public class GamePT2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 answerBox.setHint("");
+//TODO -- FIX
+                if (!numbers.isEmpty()) {
+                    if (answerBox.getText().toString().trim().length() == 0) {
+                        Toast.makeText(GamePT2.this, "No value entered!", Toast.LENGTH_SHORT).show();
+                    } else if ((Integer.parseInt(String.valueOf(answerBox.getText()))) == (Integer.parseInt(String.valueOf(practiseGame.reqNum.getText()))) * numbers.get(0)) {
+                        numbers.remove(0);
 
-                    if (numbers.size() >1)
-                    {
-                        if (answerBox.getText().toString().trim().length() ==0)
-                        {
-                            Toast.makeText(GamePT2.this, "No value entered!", Toast.LENGTH_SHORT).show();
-                        }
-                        else if ((Integer.parseInt(String.valueOf(answerBox.getText()))) == (Integer.parseInt(String.valueOf(practiseGame.reqNum.getText())))*numbers.get(0))
-                        {
-                            numbers.remove(0);
-                            progressBarInt++;
+                        if(numbers.size() != 0){
                             questionBox.setText((String.valueOf(practiseGame.reqNum.getText()))+" X "+numbers.get(0));
+                            progressBarInt++;
                             progressBar.setProgress(progressBarInt);
+                        }
 
-                        }
-                        else{
-                            penaltyTimer();
-                        }
+
                     } else {
-                        questionBox.setText("You win!");
-                        progressBar.setProgress(progressBarInt+1);
-                        pauseTimer();
-                        answerBox.setVisibility(View.GONE);
-                        submitButton.setVisibility(View.GONE);
-                        answerBox.setVisibility(View.GONE);
-                        relativeLayout.setVisibility(View.VISIBLE);
+                        penaltyTimer();
+                    }
+                } else {
+                    questionBox.setText("You win!");
+                    progressBar.setProgress(progressBarInt + 1);
+                    pauseTimer();
+                    answerBox.setVisibility(View.GONE);
+                    submitButton.setVisibility(View.GONE);
+                    answerBox.setVisibility(View.GONE);
+                    relativeLayout.setVisibility(View.VISIBLE);
 
-                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(answerBox.getWindowToken(), 0);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(answerBox.getWindowToken(), 0);
 
-                        progressBar.setVisibility(View.GONE);
-                        closeLayout.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v){
-                                relativeLayout.setVisibility(View.GONE);
-                                submitButton.setVisibility(View.VISIBLE);
-                                answerBox.setVisibility(View.VISIBLE);
-                                progressBar.setVisibility(View.VISIBLE);
-                            }
-                        });
+                    progressBar.setVisibility(View.GONE);
+                    closeLayout.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            relativeLayout.setVisibility(View.GONE);
+                            submitButton.setVisibility(View.VISIBLE);
+                            answerBox.setVisibility(View.VISIBLE);
+                            progressBar.setVisibility(View.VISIBLE);
+                        }
+                    });
 
-                        submitNameButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                String userInput = enterName.getText().toString();
-                                Date c = Calendar.getInstance().getTime();
-                                SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-                                String formattedDate = df.format(c);
-                                if (TextUtils.isEmpty(userInput)) {
-                                    Toast.makeText(GamePT2.this, "Please enter a name", Toast.LENGTH_SHORT).show();
-                                }
-                                else {
-                                    InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                                    imm.hideSoftInputFromWindow(answerBox.getWindowToken(), 0);
+                    submitNameButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String userInput = enterName.getText().toString();
+                            Date c = Calendar.getInstance().getTime();
+                            SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                            String formattedDate = df.format(c);
+                            if (TextUtils.isEmpty(userInput)) {
+                                Toast.makeText(GamePT2.this, "Please enter a name", Toast.LENGTH_SHORT).show();
+                            } else {
+                                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                                imm.hideSoftInputFromWindow(answerBox.getWindowToken(), 0);
 
-                                    List<Player> players = getPlayersFromSharedPreference();
-                                    if (players.size() < 5) {
+                                List<Player> players = getPlayersFromSharedPreference();
+                                if (players.size() < 5) {
 
-                                        Player newPlayer = new Player(userInput, String.valueOf(practiseGame.reqNum.getText()), String.valueOf(Timer.getText()), formattedDate);
+                                    Player newPlayer = new Player(userInput, String.valueOf(practiseGame.reqNum.getText()), String.valueOf(Timer.getText()), formattedDate);
 
 
-                                        players.add(newPlayer);
+                                    players.add(newPlayer);
 
+                                    Collections.sort(players, new SortTimes());
+
+
+                                    storePlayersFromSharedPreference(players);
+
+                                    updateTable(players);
+
+                                    scoresTable.setVisibility(View.VISIBLE);
+                                    relativeLayout.setVisibility(View.GONE);
+                                    Timer.setVisibility(View.GONE);
+
+                                } else {
+                                    Player newPlayer = new Player(userInput, String.valueOf(practiseGame.reqNum.getText()), String.valueOf(Timer.getText()), formattedDate);
+                                    Player incomingPlayer = players.get(4);
+                                    SortTimes Compare = new SortTimes();
+
+                                    if (Compare.compare(newPlayer, incomingPlayer) < 0) {
+                                        players.set(4, newPlayer);
                                         Collections.sort(players, new SortTimes());
 
-
                                         storePlayersFromSharedPreference(players);
-
                                         updateTable(players);
-
                                         scoresTable.setVisibility(View.VISIBLE);
                                         relativeLayout.setVisibility(View.GONE);
                                         Timer.setVisibility(View.GONE);
-
-                                    }else {
-                                        Player newPlayer = new Player(userInput, String.valueOf(practiseGame.reqNum.getText()), String.valueOf(Timer.getText()), formattedDate);
-                                        Player incomingPlayer = players.get(4);
-                                        SortTimes Compare = new SortTimes();
-
-                                        if (Compare.compare(newPlayer, incomingPlayer)<0) {
-                                            players.set(4, newPlayer);
-                                            Collections.sort(players, new SortTimes());
-
-                                            storePlayersFromSharedPreference(players);
-                                            updateTable(players);
-                                            scoresTable.setVisibility(View.VISIBLE);
-                                            relativeLayout.setVisibility(View.GONE);
-                                            Timer.setVisibility(View.GONE);
-                                        }
-                                        else if(Compare.compare(newPlayer, incomingPlayer)==0) {
-                                            updateTable(players);
-                                            scoresTable.setVisibility(View.VISIBLE);
-                                            relativeLayout.setVisibility(View.GONE);
-                                            Timer.setVisibility(View.GONE);
-                                            Toast.makeText(GamePT2.this, "So close! Times are exact tie!", Toast.LENGTH_SHORT).show();
-                                        }
-                                        else {
-                                            updateTable(players);
-                                            scoresTable.setVisibility(View.VISIBLE);
-                                            relativeLayout.setVisibility(View.GONE);
-                                            Timer.setVisibility(View.GONE);
-                                            Toast.makeText(GamePT2.this, "Sorry. Too slow!", Toast.LENGTH_SHORT).show();
-                                        }
+                                    } else if (Compare.compare(newPlayer, incomingPlayer) == 0) {
+                                        updateTable(players);
+                                        scoresTable.setVisibility(View.VISIBLE);
+                                        relativeLayout.setVisibility(View.GONE);
+                                        Timer.setVisibility(View.GONE);
+                                        Toast.makeText(GamePT2.this, "So close! Times are exact tie!", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        updateTable(players);
+                                        scoresTable.setVisibility(View.VISIBLE);
+                                        relativeLayout.setVisibility(View.GONE);
+                                        Timer.setVisibility(View.GONE);
+                                        Toast.makeText(GamePT2.this, "Sorry. Too slow!", Toast.LENGTH_SHORT).show();
                                     }
-
                                 }
+
                             }
-                        });                    }
+                        }
+                    });
+                }
             }
         });
 
