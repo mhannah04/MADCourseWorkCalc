@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="height_array">
+        <item>Feet</item>
+        <item>Inches</item>
+        <item>Metres</item>
+        <item>Centimetres</item>
+        <item>Milimetres</item>
+    </string-array>
+    <string-array name="test">
+        <item>Light Mode</item>
+        <item>Dark Mode</item>
+    </string-array>
+    <attr format="color" name="backgroundColour"/>
+    <attr format="color" name="buttonType1"/>
+    <attr format="color" name="buttonType2"/>
+    <attr format="color" name="buttonType3"/>
+    <attr format="color" name="buttonType4"/>
+    <attr format="color" name="tableColour1"/>
+    <attr format="color" name="tableColour2"/>
+    <attr format="color" name="textColour"/>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="AC_button">AC</string>
+    <string name="app_name">MADCourseWorkCalc</string>
+    <string name="hint_text">0</string>
+    <style name="Base.Theme.MADCourseWorkCalc" parent="Theme.Material3.DayNight.NoActionBar">
+        
+
+        <item name="backgroundColour">#FFFFFF</item>
+        <item name="buttonType1">#7ca46c</item>
+        <item name="buttonType2">#738ba3</item>
+        <item name="buttonType3">#826EB4</item>
+        <item name="buttonType4">#a5a5a5</item>
+        <item name="textColour">#000000</item>
+        <item name="tableColour1">#d9d9d9</item>
+        <item name="tableColour2">#FFFFFF</item>
+
+    </style>
+    <style name="Theme.MADCourseWorkCalc" parent="Base.Theme.MADCourseWorkCalc"/>
+</resources>
