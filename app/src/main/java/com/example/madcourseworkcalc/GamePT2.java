@@ -73,7 +73,7 @@ public class GamePT2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_pt2);
 
-        shuffleList(numbers);
+
 
         Timer = findViewById(R.id.clock);
         questionBox = findViewById(R.id.questionBox);
@@ -120,7 +120,7 @@ public class GamePT2 extends AppCompatActivity {
         }
 
 
-
+        shuffleList(numbers);
 
 
         startTimerButton.setOnClickListener(new View.OnClickListener() {
@@ -146,7 +146,7 @@ public class GamePT2 extends AppCompatActivity {
                         Toast.makeText(GamePT2.this, "No value entered!", Toast.LENGTH_SHORT).show();
                     } else if ((Integer.parseInt(String.valueOf(answerBox.getText()))) == (Integer.parseInt(String.valueOf(practiseGame.reqNum.getText()))) * numbers.get(0)) {
                         numbers.remove(0);
-                        Log.w("myApp", numbers.toString());
+
 
                         if (numbers.isEmpty()) {
                             YouWin();
@@ -155,6 +155,7 @@ public class GamePT2 extends AppCompatActivity {
                         questionBox.setText((String.valueOf(practiseGame.reqNum.getText()))+" X "+numbers.get(0));
                         progressBarInt++;
                         progressBar.setProgress(progressBarInt);
+                        answerBox.setText("");
 
 
 
@@ -162,6 +163,7 @@ public class GamePT2 extends AppCompatActivity {
                         Log.w("myApp", numbers.toString());
 
                         penaltyTimer();
+                        answerBox.setText("");
                     }
                 }
             }
