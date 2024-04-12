@@ -3286,6 +3286,7 @@ id clip_horizontal
 id clip_vertical
 id clock
 id clockwise
+id closeButton2
 id closest
 id collapseActionView
 id compress
@@ -3553,6 +3554,7 @@ id questionBox
 id radio
 id ratio
 id rectangles
+id relativeLayout2
 id report_drawn
 id reverseSawtooth
 id right
@@ -3908,6 +3910,8 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 string AC_button
+string SubmitText1
+string SubmitText2
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

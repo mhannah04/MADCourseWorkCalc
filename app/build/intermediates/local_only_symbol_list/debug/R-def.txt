@@ -102,6 +102,7 @@ id button_xy
 id button_yrt
 id buttons_layout
 id clock
+id closeButton2
 id date0
 id date1
 id date2
@@ -132,6 +133,7 @@ id numbColumn
 id numberEditText
 id progressBar
 id questionBox
+id relativeLayout2
 id scoresTable
 id spinner1
 id spinner2
@@ -157,6 +159,8 @@ layout activity_practise_game
 mipmap ic_launcher
 mipmap ic_launcher_round
 string AC_button
+string SubmitText1
+string SubmitText2
 string app_name
 string hint_text
 style Base.Theme.MADCourseWorkCalc

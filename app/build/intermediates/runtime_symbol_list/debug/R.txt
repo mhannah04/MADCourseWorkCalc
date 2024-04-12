@@ -3285,6 +3285,7 @@ int id clip_horizontal 0x7f0900ba
 int id clip_vertical 0x7f0900bb
 int id clock 0x7f0900bc
 int id clockwise 0x7f0900bd
+int id closeButton2 0x7f090264
 int id closest 0x7f0900be
 int id collapseActionView 0x7f0900bf
 int id compress 0x7f0900c0
@@ -3552,6 +3553,7 @@ int id questionBox 0x7f0901c5
 int id radio 0x7f0901c6
 int id ratio 0x7f0901c7
 int id rectangles 0x7f0901c8
+int id relativeLayout2 0x7f090265
 int id report_drawn 0x7f0901c9
 int id reverseSawtooth 0x7f0901ca
 int id right 0x7f0901cb
@@ -3907,6 +3909,8 @@ int mipmap ic_launcher 0x7f0e0000
 int mipmap ic_launcher_round 0x7f0e0001
 int plurals mtrl_badge_content_description 0x7f0f0000
 int string AC_button 0x7f100000
+int string SubmitText1 0x7f1000a2
+int string SubmitText2 0x7f1000a3
 int string abc_action_bar_home_description 0x7f100001
 int string abc_action_bar_up_description 0x7f100002
 int string abc_action_menu_overflow_description 0x7f100003

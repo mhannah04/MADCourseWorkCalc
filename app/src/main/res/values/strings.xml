@@ -3,6 +3,11 @@
     <string name="AC_button">AC</string>
     <string name="hint_text">0</string>
 
+    <string name="SubmitText1">Submit</string>
+    <string name="SubmitText2">Show Leader board</string>
+
+
+
     <string-array name="height_array">
         <item>Feet</item>
         <item>Inches</item>

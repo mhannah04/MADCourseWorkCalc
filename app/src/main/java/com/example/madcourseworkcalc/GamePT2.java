@@ -44,12 +44,15 @@ public class GamePT2 extends AppCompatActivity {
     private boolean finalQuestionPassed =false;
 
     TextView Timer;
-    ImageView imageView3;
+    ImageView imageView3, closeButton2;
     ProgressBar progressBar;
     private boolean isPaused = false;
     private long pausedTime = 0;
     EditText answerBox;
     Button startTimerButton;
+
+    RelativeLayout relativeLayout2;
+
     Button submitButton;
     TableLayout scoresTable;
     private long elapsedTime = 0;
@@ -74,7 +77,7 @@ public class GamePT2 extends AppCompatActivity {
         setContentView(R.layout.activity_game_pt2);
 
 
-
+        relativeLayout2 = findViewById(R.id.relativeLayout2);
         Timer = findViewById(R.id.clock);
         questionBox = findViewById(R.id.questionBox);
         startTimerButton = findViewById(R.id.startButton);
@@ -112,6 +115,8 @@ public class GamePT2 extends AppCompatActivity {
         date3 = findViewById(R.id.date3);
         date4 = findViewById(R.id.date4);
 
+        closeButton2 = findViewById(R.id.closeButton2);
+        submitButton.setText("Submit");
 
 
 
@@ -139,8 +144,10 @@ public class GamePT2 extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if(submitButton.getText().equals(getString(R.string.SubmitText2))){submitButton.setText(getString(R.string.SubmitText1));}
+
                 answerBox.setHint("");
-//TODO -- FIX
                 if (!numbers.isEmpty()) {
                     if (answerBox.getText().toString().trim().length() == 0) {
                         Toast.makeText(GamePT2.this, "No value entered!", Toast.LENGTH_SHORT).show();
@@ -223,7 +230,7 @@ public class GamePT2 extends AppCompatActivity {
 
                         updateTable(players);
 
-                        scoresTable.setVisibility(View.VISIBLE);
+                        relativeLayout2.setVisibility(View.VISIBLE);
                         relativeLayout.setVisibility(View.GONE);
                         Timer.setVisibility(View.GONE);
 
@@ -238,18 +245,18 @@ public class GamePT2 extends AppCompatActivity {
 
                             storePlayersFromSharedPreference(players);
                             updateTable(players);
-                            scoresTable.setVisibility(View.VISIBLE);
+                            relativeLayout2.setVisibility(View.VISIBLE);
                             relativeLayout.setVisibility(View.GONE);
                             Timer.setVisibility(View.GONE);
                         } else if (Compare.compare(newPlayer, incomingPlayer) == 0) {
                             updateTable(players);
-                            scoresTable.setVisibility(View.VISIBLE);
+                            relativeLayout2.setVisibility(View.VISIBLE);
                             relativeLayout.setVisibility(View.GONE);
                             Timer.setVisibility(View.GONE);
                             Toast.makeText(GamePT2.this, "So close! Times are exact tie!", Toast.LENGTH_SHORT).show();
                         } else {
                             updateTable(players);
-                            scoresTable.setVisibility(View.VISIBLE);
+                            relativeLayout2.setVisibility(View.VISIBLE);
                             relativeLayout.setVisibility(View.GONE);
                             Timer.setVisibility(View.GONE);
                             Toast.makeText(GamePT2.this, "Sorry. Too slow!", Toast.LENGTH_SHORT).show();
@@ -258,6 +265,30 @@ public class GamePT2 extends AppCompatActivity {
 
                 }
             }
+        });
+
+        closeButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relativeLayout2.setVisibility(View.GONE);
+                submitButton.setText(getString(R.string.SubmitText2));
+                submitButton.setVisibility(View.VISIBLE);
+                Timer.setVisibility(View.VISIBLE);
+            }
+
+        });
+
+
+        submitButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                relativeLayout2.setVisibility(View.VISIBLE);
+                submitButton.setText(getString(R.string.SubmitText2));
+                submitButton.setVisibility(View.GONE);
+                Timer.setVisibility(View.GONE);
+            }
+
+
         });
     }
 

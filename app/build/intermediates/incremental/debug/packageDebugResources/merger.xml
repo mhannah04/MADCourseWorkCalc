@@ -8,7 +8,7 @@
     </string-array><string-array name="test">
         <item>Light Mode</item>
         <item>Dark Mode</item>
-    </string-array></file><file path="C:\Users\maxha\OneDrive\rollback\app\src\main\res\values\themes.xml" qualifiers=""><style name="Base.Theme.MADCourseWorkCalc" parent="Theme.Material3.DayNight.NoActionBar">
+    </string-array><string name="SubmitText2">Show Leader board</string><string name="SubmitText1">Submit</string></file><file path="C:\Users\maxha\OneDrive\rollback\app\src\main\res\values\themes.xml" qualifiers=""><style name="Base.Theme.MADCourseWorkCalc" parent="Theme.Material3.DayNight.NoActionBar">
         
 
         <item name="backgroundColour">#FFFFFF</item>

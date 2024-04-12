@@ -22,6 +22,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="AC_button">AC</string>
+    <string name="SubmitText1">Submit</string>
+    <string name="SubmitText2">Show Leader board</string>
     <string name="app_name">MADCourseWorkCalc</string>
     <string name="hint_text">0</string>
     <style name="Base.Theme.MADCourseWorkCalc" parent="Theme.Material3.DayNight.NoActionBar">
