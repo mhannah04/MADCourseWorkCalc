@@ -13,6 +13,8 @@ import android.widget.Toast;
 public class practiseGame extends AppCompatActivity {
 
     public static EditText reqNum;
+    Button back_button;
+
     private Button submitButton;
     private int[] numbers = new int[12];
 
@@ -20,7 +22,7 @@ public class practiseGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practise_game);
-
+        back_button = findViewById(R.id.back_page);
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = i + 1;
         }
@@ -51,6 +53,15 @@ public class practiseGame extends AppCompatActivity {
                     }
                 }
             }
+        });
+
+        back_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent back = new Intent(practiseGame.this, MainActivity.class);
+                startActivity(back);
+            }
+
         });
     }
 }

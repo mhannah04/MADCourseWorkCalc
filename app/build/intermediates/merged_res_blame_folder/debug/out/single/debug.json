@@ -4,40 +4,108 @@
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_bottom_left_alt.xml"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_liner_layout_rounded_corners.xml.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\liner_layout_rounded_corners.xml"
-    },
-    {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xxxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_bottom_center_alt.xml.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_bottom_center_alt.xml"
     },
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\layout_activity_game_pt2.xml.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\layout\\activity_game_pt2.xml"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_right.xml.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_right.xml"
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_bottom_center_alt.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_bottom_center_alt.xml"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_right.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_right.xml"
     },
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\layout_activity_converter.xml.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\layout\\activity_converter.xml"
-    },
-    {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xhdpi_back_arrow.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xhdpi\\back_arrow.webp"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-anydpi-v26_back_arrow.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-anydpi-v26\\back_arrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_bottom_left.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_bottom_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_top_left.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_top_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xhdpi_back_arrow_round.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xhdpi\\back_arrow_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-hdpi_back_arrow.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-hdpi\\back_arrow.webp"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\layout_activity_calculator.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\layout\\activity_calculator.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xxxhdpi_back_arrow_round.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xxxhdpi\\back_arrow_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_center_alt.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_center_alt.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_back_arrow_foreground.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\back_arrow_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_liner_layout_rounded_corners.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\liner_layout_rounded_corners.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-mdpi_back_arrow_round.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-mdpi\\back_arrow_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\layout_activity_converter.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\layout\\activity_converter.xml"
     },
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_bottom_center.xml.flat",
@@ -56,32 +124,28 @@
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_center.xml"
     },
     {
-        "merged": "com.example.madcourseworkcalc.app-merged_res-31:/layout_activity_game_pt2.xml.flat",
-        "source": "com.example.madcourseworkcalc.app-main-33:/layout/activity_game_pt2.xml"
-    },
-    {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_bottom_right.xml.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_bottom_right.xml"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xxhdpi_back_arrow.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xxhdpi\\back_arrow.webp"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_bottom_left.xml.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_bottom_left.xml"
+        "merged": "com.example.madcourseworkcalc.app-merged_res-31:/layout-land_activity_calculator.xml.flat",
+        "source": "com.example.madcourseworkcalc.app-main-33:/layout-land/activity_calculator.xml"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_top_center.xml.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_top_center.xml"
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_baseline_arrow_back_24.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\baseline_arrow_back_24.xml"
     },
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_top_center.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_top_center.xml"
     },
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
@@ -92,12 +156,20 @@
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xxxhdpi_back_arrow.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xxxhdpi\\back_arrow.webp"
+    },
+    {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_left.xml.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_left.xml"
     },
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-anydpi-v26_back_arrow_round.xml.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-anydpi-v26\\back_arrow_round.xml"
     },
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_top_right.xml.flat",
@@ -108,40 +180,28 @@
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_top_left.xml.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_top_left.xml"
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-hdpi_back_arrow_round.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-hdpi\\back_arrow_round.webp"
     },
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_bottom_right_alt.xml.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_bottom_right_alt.xml"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xxhdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\layout_activity_calculator.xml.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\layout\\activity_calculator.xml"
-    },
-    {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_left_alt.xml.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_left_alt.xml"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-mdpi_back_arrow.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-mdpi\\back_arrow.webp"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\drawable_table_center_alt.xml.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\drawable\\table_center_alt.xml"
+        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-xxhdpi_back_arrow_round.webp.flat",
+        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-xxhdpi\\back_arrow_round.webp"
     },
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-mdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
         "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\layout-land_activity_calculator.xml.flat",
@@ -156,7 +216,7 @@
         "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\layout\\activity_practise_game.xml"
     },
     {
-        "merged": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-merged_res-31:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\maxha\\.gradle\\daemon\\8.2\\com.example.madcourseworkcalc.app-main-33:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "com.example.madcourseworkcalc.app-merged_res-31:/layout_activity_calculator.xml.flat",
+        "source": "com.example.madcourseworkcalc.app-main-33:/layout/activity_calculator.xml"
     }
 ]

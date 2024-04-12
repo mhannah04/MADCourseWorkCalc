@@ -3,11 +3,13 @@ package com.example.madcourseworkcalc;
 import static java.util.Collections.swap;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -49,7 +51,7 @@ public class GamePT2 extends AppCompatActivity {
     private boolean isPaused = false;
     private long pausedTime = 0;
     EditText answerBox;
-    Button startTimerButton;
+    Button startTimerButton, back_button;
 
     RelativeLayout relativeLayout2;
 
@@ -70,13 +72,15 @@ public class GamePT2 extends AppCompatActivity {
     ArrayList <Integer> numbers = new ArrayList<Integer>();
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_pt2);
 
-
+        back_button = findViewById(R.id.back_page);
         relativeLayout2 = findViewById(R.id.relativeLayout2);
         Timer = findViewById(R.id.clock);
         questionBox = findViewById(R.id.questionBox);
@@ -127,7 +131,14 @@ public class GamePT2 extends AppCompatActivity {
 
         shuffleList(numbers);
 
+        back_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent back = new Intent(GamePT2.this, practiseGame.class);
+                startActivity(back);
+            }
 
+        });
         startTimerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,7 +147,7 @@ public class GamePT2 extends AppCompatActivity {
                 submitButton.setVisibility(View.VISIBLE);
                 answerBox.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.VISIBLE);
-                questionBox.setText((String.valueOf(practiseGame.reqNum.getText()))+" X "+numbers.get(0));
+                questionBox.setText((practiseGame.reqNum.getText())+" X "+numbers.get(0));
             }
 
         });
@@ -159,7 +170,7 @@ public class GamePT2 extends AppCompatActivity {
                             YouWin();
                             return;
                         }
-                        questionBox.setText((String.valueOf(practiseGame.reqNum.getText()))+" X "+numbers.get(0));
+                        questionBox.setText((practiseGame.reqNum.getText())+" X "+numbers.get(0));
                         progressBarInt++;
                         progressBar.setProgress(progressBarInt);
                         answerBox.setText("");
@@ -405,6 +416,13 @@ public class GamePT2 extends AppCompatActivity {
             dateTextView.setText(player.getDate());
         }
     }
+
+
+
+
+
+
+
 
 }
 

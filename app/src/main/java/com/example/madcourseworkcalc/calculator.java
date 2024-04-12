@@ -1,5 +1,6 @@
 package com.example.madcourseworkcalc;
 
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -16,6 +17,8 @@ import org.mariuszgromada.math.mxparser.mXparser;
 
 public class calculator extends AppCompatActivity {
 //https://stackoverflow.com/questions/6645537/how-to-detect-the-swipe-left-or-right-in-android
+
+
     private TextView output;
     private TextView degOrRad;
     public boolean chngTrig = false;
@@ -499,6 +502,13 @@ public class calculator extends AppCompatActivity {
                 break;
         }
         return super.onTouchEvent(swipe);
+    }
+
+    public void back_button(View view) {
+
+        Intent back = new Intent(calculator.this, MainActivity.class);
+        startActivity(back);
+
     }
 
 }
