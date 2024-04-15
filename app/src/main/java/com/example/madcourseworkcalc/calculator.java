@@ -398,14 +398,14 @@ public class calculator extends AppCompatActivity {
         {
             degOrRadBool = true;
             degOrRad.setText("Deg");
-            Rad.setText("Deg");
+            Rad.setText("Rad");
             mXparser.setDegreesMode();
         }
         else
         {
             degOrRadBool = false;
             degOrRad.setText("Rad");
-            Rad.setText("Rad");
+            Rad.setText("Deg");
             mXparser.setRadiansMode();
         }
 
