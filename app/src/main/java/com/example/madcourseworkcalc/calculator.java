@@ -78,6 +78,10 @@ public class calculator extends AppCompatActivity {
         lastInputLength.add(inputLength);
 
         String oldSum = output.getText().toString();
+
+        if(oldSum.contains("Error")){
+            oldSum="";
+        }
         StringBuilder formattedSum = new StringBuilder();
 
         int length = oldSum.length() + input.length();
@@ -89,9 +93,6 @@ public class calculator extends AppCompatActivity {
                 formattedSum.append(input.charAt(i - oldSum.length()));
             }
         }
-
-
-
 
         output.setText(formattedSum.toString());
     }
@@ -356,7 +357,7 @@ public class calculator extends AppCompatActivity {
     public void tenToXPushed(View view) {}//TODO
     public void oneOverXPushed(View view) {}//TODO
     public void sqrtXPushed(View view) {}//TODO
-    public void cbrtXPushed(View view) {}//TODO
+    public void cbrtXPushed(View view) {updateSum("∛",1);}//TODO
     public void yRtXPushed(View view) {}//TODO
     public void InPushed(View view) {}//TODO
     public void logPushed(View view) {}//TODO
@@ -528,6 +529,7 @@ public class calculator extends AppCompatActivity {
 
                     if (!currentOutput.isEmpty()) {
                         if(currentOutput.equals("Error")){
+                            newText = newText.substring(0, newText.length() - 5);
                             newText = newText.substring(0, newText.length() - 5);
                         }else {
                             int index = lastInputLength.size()-1;
