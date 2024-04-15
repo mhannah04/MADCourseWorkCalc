@@ -43,35 +43,35 @@ public class practiseGame extends AppCompatActivity {
         reqNum.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-            if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
-                Log.d("MyApp","Enter key input");
-                String userInput = reqNum.getText().toString();
-                if (TextUtils.isEmpty(userInput)) {
-                    Toast.makeText(practiseGame.this, "Please enter a number", Toast.LENGTH_SHORT).show();
-                } else {
-                    int userNumber = Integer.parseInt(userInput);
-                    boolean found = false;
-                    for (int number : numbers) {
-                        if (number == userNumber) {
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (found) {
-                        Log.d("MyApp","Success");
-                        Intent startGame = new Intent(practiseGame.this, GamePT2.class);
-                        startActivity(startGame);
+                if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
+                    Log.d("MyApp","Enter key input");
+                    String userInput = reqNum.getText().toString();
+                    if (TextUtils.isEmpty(userInput)) {
+                        Toast.makeText(practiseGame.this, "Please enter a number", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(practiseGame.this, "Ensure number is between 1-12", Toast.LENGTH_SHORT).show();
+                        int userNumber = Integer.parseInt(userInput);
+                        boolean found = false;
+                        for (int number : numbers) {
+                            if (number == userNumber) {
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (found) {
+                            Log.d("MyApp","Success");
+                            Intent startGame = new Intent(practiseGame.this, GamePT2.class);
+                            startActivity(startGame);
+                        } else {
+                            Toast.makeText(practiseGame.this, "Ensure number is between 1-12", Toast.LENGTH_SHORT).show();
 
-                    }
-                    return false;
-                }}
+                        }
+                        return false;
+                    }}
 
 
                 return false;
             }
-            });
+        });
 
         submitButton.setOnClickListener(new View.OnClickListener() {
 
@@ -105,13 +105,6 @@ public class practiseGame extends AppCompatActivity {
                 Intent back = new Intent(practiseGame.this, MainActivity.class);
                 startActivity(back);
             }
-
         });
-
-
-
-
-
-
     }
 }

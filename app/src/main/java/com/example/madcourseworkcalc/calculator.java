@@ -91,8 +91,29 @@ public class calculator extends AppCompatActivity {
         }
 
 
+        String leftString;
+        int decimalPoint = formattedSum.indexOf(".");
+        if (decimalPoint != -1) {
+            leftString = formattedSum.substring(0, decimalPoint);
+        } else {
+            leftString = formattedSum.toString();
+        }
 
-        output.setText(formattedSum.toString());
+        StringBuilder addCommas = new StringBuilder();
+        int count =0;
+        for (int i=leftString.length()-1;i>=0;i--){
+            addCommas.insert(0,leftString.charAt(i));
+            count++;
+            if (count %3 ==0 && i !=0){
+                addCommas.insert(0,",");
+            }
+        }
+
+        if (decimalPoint != -1) {
+            addCommas.append(formattedSum.substring(decimalPoint));
+        }
+
+        output.setText(addCommas.toString());
     }
 
 

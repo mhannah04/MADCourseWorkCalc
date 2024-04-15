@@ -127,7 +127,6 @@ public class GamePT2 extends AppCompatActivity {
 
 
 
-
         for (int i = 0; i < 12; i++) {
             numbers.add(i + 1);
         }
@@ -467,6 +466,15 @@ public class GamePT2 extends AppCompatActivity {
             timeTextView.setText(player.getTime());
             dateTextView.setText(player.getDate());
         }
+    }
+
+    private void openKeyboard() {
+        // Request focus for the EditText field
+        answerBox.requestFocus();
+
+        // Show the keyboard
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(answerBox, InputMethodManager.SHOW_IMPLICIT);
     }
 
 
