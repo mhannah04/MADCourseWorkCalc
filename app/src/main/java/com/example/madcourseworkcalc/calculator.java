@@ -77,7 +77,7 @@ public class calculator extends AppCompatActivity {
     {
         lastInputLength.add(inputLength);
 
-        String oldSum = output.getText().toString().replaceAll(",","");
+        String oldSum = output.getText().toString();
         StringBuilder formattedSum = new StringBuilder();
 
         int length = oldSum.length() + input.length();
@@ -91,29 +91,9 @@ public class calculator extends AppCompatActivity {
         }
 
 
-        String leftString;
-        int decimalPoint = formattedSum.indexOf(".");
-        if (decimalPoint != -1) {
-            leftString = formattedSum.substring(0, decimalPoint);
-        } else {
-            leftString = formattedSum.toString();
-        }
 
-        StringBuilder addCommas = new StringBuilder();
-        int count =0;
-        for (int i=leftString.length()-1;i>=0;i--){
-            addCommas.insert(0,leftString.charAt(i));
-            count++;
-            if (count %3 ==0 && i !=0){
-                addCommas.insert(0,",");
-            }
-        }
 
-        if (decimalPoint != -1) {
-            addCommas.append(formattedSum.substring(decimalPoint));
-        }
-
-        output.setText(addCommas.toString());
+        output.setText(formattedSum.toString());
     }
 
 
@@ -134,8 +114,32 @@ public class calculator extends AppCompatActivity {
         if (answer.toString().equals("NaN"))
         {
             answer = new String("Error");
+            output.setText(answer);
+            return;
         }
-        output.setText(answer);
+
+        String leftString;
+        int decimalPoint = answer.indexOf(".");
+        if (decimalPoint != -1) {
+            leftString = answer.substring(0, decimalPoint);
+        } else {
+            leftString = answer.toString();
+        }
+
+        StringBuilder addCommas = new StringBuilder();
+        int count =0;
+        for (int i=leftString.length()-1;i>=0;i--){
+            addCommas.insert(0,leftString.charAt(i));
+            count++;
+            if (count %3 ==0 && i !=0){
+                addCommas.insert(0,",");
+            }
+        }
+
+        if (decimalPoint != -1) {
+            addCommas.append(answer.substring(decimalPoint));
+        }
+        output.setText(addCommas);
     }
 
 
@@ -521,10 +525,16 @@ public class calculator extends AppCompatActivity {
                     String currentOutput = output.getText().toString();
                     String newText = currentOutput.replaceAll(",", "");
 
+
                     if (!currentOutput.isEmpty()) {
-                        int index = lastInputLength.size()-1;
-                        newText = newText.substring(0, newText.length() - (int)lastInputLength.get(index)); // Perform swipe action
-                        lastInputLength.remove(index);
+                        if(currentOutput.equals("Error")){
+                            newText = newText.substring(0, newText.length() - 5);
+                        }else {
+                            int index = lastInputLength.size()-1;
+                            newText = newText.substring(0, newText.length() - (int)lastInputLength.get(index)); // Perform swipe action
+                            lastInputLength.remove(index);
+                        }
+
                     }
 
                     output.setText(newText);

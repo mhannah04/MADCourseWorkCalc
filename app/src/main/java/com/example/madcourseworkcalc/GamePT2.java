@@ -127,6 +127,8 @@ public class GamePT2 extends AppCompatActivity {
 
 
 
+
+
         for (int i = 0; i < 12; i++) {
             numbers.add(i + 1);
         }
@@ -195,6 +197,7 @@ public class GamePT2 extends AppCompatActivity {
         answerBox.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
+                answerBox.requestFocus();
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
 
                     if(submitButton.getText().equals(getString(R.string.SubmitText2))){submitButton.setText(getString(R.string.SubmitText1));}
@@ -221,7 +224,7 @@ public class GamePT2 extends AppCompatActivity {
                             // Show the keyboard
 
 
-                            answerBox.setShowSoftInputOnFocus(true);
+                            openKeyboard();
 
 
                         } else {
