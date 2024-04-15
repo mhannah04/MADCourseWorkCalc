@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -65,6 +66,7 @@ public class GamePT2 extends AppCompatActivity {
     Button submitNameButton;
     ImageButton closeLayout;
 
+    boolean toastWorkAround = false;
     CountDownTimer countDownTimer;
     CountDownTimer countUpTimer;
     TextView questionBox;
@@ -124,47 +126,7 @@ public class GamePT2 extends AppCompatActivity {
 
 
 
-        answerBox.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (keyCode == KeyEvent.KEYCODE_ENTER) {
 
-                    if(submitButton.getText().equals(getString(R.string.SubmitText2))){submitButton.setText(getString(R.string.SubmitText1));}
-
-                    if (!numbers.isEmpty()) {
-                        if (answerBox.getText().toString().trim().length() == 0) {
-                            if (answerBox.getText().toString().trim().length() == 0) {
-                                Toast.makeText(GamePT2.this, "No value entered!", Toast.LENGTH_SHORT).show();
-                                return true;
-                            }
-                        } else if ((Integer.parseInt(String.valueOf(answerBox.getText()))) == (Integer.parseInt(String.valueOf(practiseGame.reqNum.getText()))) * numbers.get(0)) {
-                            numbers.remove(0);
-
-
-                            if (numbers.isEmpty()) {
-                                YouWin();
-                                return true;
-                            }
-                            questionBox.setText((practiseGame.reqNum.getText())+" X "+numbers.get(0));
-                            progressBarInt++;
-                            progressBar.setProgress(progressBarInt);
-
-                            answerBox.setText("");
-                            return true;
-
-
-                        } else {
-                            Log.w("myApp", numbers.toString());
-
-                            penaltyTimer();
-                            answerBox.setText("");
-                        }
-                    }
-                    return true;
-                }
-                return false;
-            }
-        });
 
         for (int i = 0; i < 12; i++) {
             numbers.add(i + 1);
@@ -193,6 +155,7 @@ public class GamePT2 extends AppCompatActivity {
             }
 
         });
+
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -230,8 +193,51 @@ public class GamePT2 extends AppCompatActivity {
                 }
             }
         });
+        answerBox.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
+
+                    if(submitButton.getText().equals(getString(R.string.SubmitText2))){submitButton.setText(getString(R.string.SubmitText1));}
+
+                    if (!numbers.isEmpty()) {
+                        if (answerBox.getText().toString().length() == 0) {
+                            Toast.makeText(GamePT2.this, "No value entered!", Toast.LENGTH_SHORT).show();
+                            return true;
+
+                        } else if ((Integer.parseInt(String.valueOf(answerBox.getText()))) == (Integer.parseInt(String.valueOf(practiseGame.reqNum.getText()))) * numbers.get(0)) {
+                            numbers.remove(0);
+
+                            if (numbers.isEmpty()) {
+                                YouWin();
+                                return true;
+                            }
+                            questionBox.setText((practiseGame.reqNum.getText())+" X "+numbers.get(0));
+                            progressBarInt++;
+                            progressBar.setProgress(progressBarInt);
+
+//                            answerBox.setText("");
 
 
+                            // Show the keyboard
+
+
+                            answerBox.setShowSoftInputOnFocus(true);
+
+
+                        } else {
+                            Log.w("myApp", numbers.toString());
+
+                            penaltyTimer();
+                            answerBox.setText("");
+                        }
+                    }
+
+                }
+
+                return false;
+            }
+        });
     }
 
     public void YouWin(){
@@ -265,7 +271,9 @@ public class GamePT2 extends AppCompatActivity {
                 SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
                 String formattedDate = df.format(c);
                 if (TextUtils.isEmpty(userInput)) {
-                    Toast.makeText(GamePT2.this, "Please enter a name", Toast.LENGTH_SHORT).show();
+
+                        Toast.makeText(GamePT2.this, "Please enter a name", Toast.LENGTH_SHORT).show();
+
                 } else {
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(answerBox.getWindowToken(), 0);
