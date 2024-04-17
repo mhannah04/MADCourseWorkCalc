@@ -11,7 +11,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,23 +30,24 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
+/**
+ * GamePT2 class is a class designed to let the player play the multiplication based quiz game
+ * The game quizes the player on the times tables, 1-12 of a number chosen by the player on the previous activity
+ * The game makes use of shared preferences to allow for users data to be saved on a leaderboard
+ * The games makes of of the player class to use shared preferences
+ * The game can also share the data of the current player
+ */
+
 public class GamePT2 extends AppCompatActivity {
-
-    private static final String SHAREDPREF_SET="StartTime";
-    private static final String SHAREDPREF_TIME="Table";
-
-
 
     TextView name1, name2, name3, name4, name0;
     TextView number1, number2, number3, number4, number0;
     TextView time1, time2, time3, time4, time0;
     TextView date1, date2, date3, date4, date0;
 
-
-    private boolean finalQuestionPassed =false;
-
     TextView Timer;
-    ImageView imageView3, closeButton2;
+    public ArrayList<String> currentPlayer = new ArrayList<String>(4);
+    ImageView imageView3, closeButton2, shareButton;
     ProgressBar progressBar;
     private boolean isPaused = false;
     private long pausedTime = 0;
@@ -65,8 +65,6 @@ public class GamePT2 extends AppCompatActivity {
     EditText enterName;
     Button submitNameButton;
     ImageButton closeLayout;
-
-    boolean toastWorkAround = false;
     CountDownTimer countDownTimer;
     CountDownTimer countUpTimer;
     TextView questionBox;
@@ -83,7 +81,7 @@ public class GamePT2 extends AppCompatActivity {
         setContentView(R.layout.activity_game_pt2);
 
         back_button = findViewById(R.id.back_page);
-        relativeLayout2 = findViewById(R.id.relativeLayout2);
+        relativeLayout2 = findViewById(R.id.tableLayoutRelativeLayout);
         Timer = findViewById(R.id.clock);
         questionBox = findViewById(R.id.questionBox);
         startTimerButton = findViewById(R.id.startButton);
@@ -96,6 +94,7 @@ public class GamePT2 extends AppCompatActivity {
         enterName = findViewById(R.id.enterName);
         submitNameButton = findViewById(R.id.submitNameButton);
         closeLayout = findViewById(R.id.imageButton);
+        shareButton = findViewById(R.id.shareButton);
 
         name0 = findViewById(R.id.name0);
         name1 = findViewById(R.id.name1);
@@ -218,13 +217,12 @@ public class GamePT2 extends AppCompatActivity {
                             progressBarInt++;
                             progressBar.setProgress(progressBarInt);
 
-//                            answerBox.setText("");
+                            answerBox.setText("");
 
 
                             // Show the keyboard
 
 
-                            openKeyboard();
 
 
                         } else {
@@ -281,9 +279,14 @@ public class GamePT2 extends AppCompatActivity {
                     imm.hideSoftInputFromWindow(answerBox.getWindowToken(), 0);
 
                     List<Player> players = getPlayersFromSharedPreference();
+                    currentPlayer.add(0,userInput);
+                    currentPlayer.add(1,String.valueOf(practiseGame.reqNum.getText()));
+                    currentPlayer.add(2,String.valueOf(Timer.getText()));
+                    currentPlayer.add(3,formattedDate);
                     if (players.size() < 5) {
 
                         Player newPlayer = new Player(userInput, String.valueOf(practiseGame.reqNum.getText()), String.valueOf(Timer.getText()), formattedDate);
+
 
 
                         players.add(newPlayer);
@@ -301,6 +304,9 @@ public class GamePT2 extends AppCompatActivity {
 
                     } else {
                         Player newPlayer = new Player(userInput, String.valueOf(practiseGame.reqNum.getText()), String.valueOf(Timer.getText()), formattedDate);
+
+
+
                         Player incomingPlayer = players.get(4);
                         SortTimes Compare = new SortTimes();
 
@@ -330,6 +336,22 @@ public class GamePT2 extends AppCompatActivity {
 
                 }
             }
+
+
+        });
+
+
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+
+                sendIntent.putExtra(Intent.EXTRA_TEXT, ToString(currentPlayer));
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+            }
+
         });
 
         closeButton2.setOnClickListener(new View.OnClickListener() {
@@ -471,14 +493,13 @@ public class GamePT2 extends AppCompatActivity {
         }
     }
 
-    private void openKeyboard() {
-        // Request focus for the EditText field
-        answerBox.requestFocus();
 
-        // Show the keyboard
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.showSoftInput(answerBox, InputMethodManager.SHOW_IMPLICIT);
+    public String ToString(ArrayList<String> playerArrayList){
+
+        return playerArrayList.get(0) + " completed their " + playerArrayList.get(1) + "times table in " + playerArrayList.get(2) + " on " + playerArrayList.get(3) + ".";
+
     }
+
 
 
 }

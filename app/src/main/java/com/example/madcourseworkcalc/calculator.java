@@ -6,10 +6,13 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import org.mariuszgromada.math.mxparser.Expression;
 import org.mariuszgromada.math.mxparser.mXparser;
@@ -17,10 +20,25 @@ import org.mariuszgromada.math.mxparser.mXparser;
 import java.util.ArrayList;
 
 
+/**
+ * Calculator class used to use calculator activity
+ * This class contains all code required to run calculator activity
+ * Code uses Math Parser library for help in regard to dealing with mathematical expressions
+ * Code also makes use of a movement sensor, on the event of the user shaking the phone enough
+ * the screen will clear
+ * Additionally, if the user swipes the screen then the furthest digit on the right will be removed
+ */
+
+
+
+
 public class calculator extends AppCompatActivity {
 //https://stackoverflow.com/questions/6645537/how-to-detect-the-swipe-left-or-right-in-android
 
     public ArrayList <Integer> lastInputLength = new ArrayList<Integer>();
+    public String savedNum;
+    private char[] validChars = {'1','2','3','4','5','6','7','8','9','0', '.'};
+    public boolean invalid =false;
     private TextView output;
     private TextView degOrRad;
     public boolean chngTrig = false;
@@ -79,7 +97,7 @@ public class calculator extends AppCompatActivity {
 
         String oldSum = output.getText().toString();
 
-        if(oldSum.contains("Error")){
+        if(oldSum.contains("Error")|| oldSum.contains("Infinity")){
             oldSum="";
         }
         StringBuilder formattedSum = new StringBuilder();
@@ -99,14 +117,18 @@ public class calculator extends AppCompatActivity {
 
 
     public void equPushed(View view) {
+        lastInputLength.clear();
         String sum = output.getText().toString();
         sum = sum.replaceAll("X", "*"); // Replacing 'X' with '*'
         sum = sum.replaceAll("÷", "/"); // Replacing '÷' with '/'
+        sum = sum.replaceAll("₂", "2");
         sum = sum.replaceAll("cosh⁻¹", "acosh");
         sum = sum.replaceAll("tanh⁻¹", "atanh");
         sum = sum.replaceAll("sinh⁻¹", "asinh");
         sum = sum.replaceAll("÷", "/");
-        sum = sum.replaceAll("÷", "/");
+        sum = sum.replaceAll("log₁₀\\(","log10(");
+
+
 
         Expression  expression = new Expression(sum);
 
@@ -115,6 +137,11 @@ public class calculator extends AppCompatActivity {
         if (answer.toString().equals("NaN"))
         {
             answer = new String("Error");
+            output.setText(answer);
+            return;
+        }
+        if (answer.toString().equals("Infinity"))
+        {
             output.setText(answer);
             return;
         }
@@ -208,92 +235,76 @@ public class calculator extends AppCompatActivity {
         }
     }
     public void num8Pushed(View view) {
-        if(output.getText().toString().contains("Error")){
-            output.setText("");
-            updateSum("8",1);
-        }
-        else{
-            updateSum("8",1);
-        }
+        updateSum("8",1);
+
     }
     public void num9Pushed(View view) {
-        if(output.getText().toString().contains("Error")){
-            output.setText("");
             updateSum("9",1);
-        }
-        else{
-            updateSum("9",1);
-        }
     }
     public void num0Pushed(View view) {
-        if(output.getText().toString().contains("Error")){
-            output.setText("");
-            updateSum("0",1);
-        }
-        else{
-            updateSum("0",1);
-        }
+        updateSum("0",1);
     }
     public void plusPushed(View view) {
-        if(output.getText().toString().contains("Error")){
-            output.setText("");
-            updateSum("+",1);
-        }
-        else{
-            updateSum("+",1);
-        }
+
+        updateSum("+",1);
     }
     public void subtractPushed(View view) {
-        if(output.getText().toString().contains("Error")){
-            output.setText("");
-            updateSum("-",1);
-        }
-        else{
-            updateSum("-",1);
-        }
+        updateSum("-",1);
     }
     public void timesPushed(View view) {
-        if(output.getText().toString().contains("Error")){
-            output.setText("");
-            updateSum("X",1);
-        }
-        else{
-            updateSum("X",1);
-        }
+        updateSum("X",1);
     }
     public void divPushed(View view) {
-        if(output.getText().toString().contains("Error")){
-            output.setText("");
-            updateSum("÷",1);
-        }
-        else{
-            updateSum("÷",1);
-        }
+        updateSum("÷",1);
     }
     public void opnBrktPushed(View view) {
-        if(output.getText().toString().contains("Error")){
-            output.setText("");
-            updateSum("(",1);
-        }
-        else{
-            updateSum("(",1);
-        }
+        updateSum("(",1);
     }
     public void clsBrktPushed(View view) {
-        if(output.getText().toString().contains("Error")){
-            output.setText("");
-            updateSum(")",1);
-        }
-        else{
-            updateSum(")",1);
-        }
+        updateSum(")",1);
+
     }
-    public void mcPushed(View view) {}//TODO
-    public void mrPushed(View view) {}//TODO
-    public void mpPushed(View view) {}//TODO
-    public void mmPushed(View view) {}//TODO
+    public void mcPushed(View view) {
+        savedNum="";
+    }
+    public void mrPushed(View view) {updateSum(savedNum,1);}
+    public void mpPushed(View view) {
+
+        invalid=false;
+        for (int i=0; i< (output.getText().toString().length());i++){
+            char current = output.getText().toString().charAt(i);
+            if (!inArray(current, validChars)){
+                invalid =true;
+                Toast.makeText(calculator.this, "Press equals before saving number.", Toast.LENGTH_SHORT).show();
+                break;
+            }
+        }
+        if (!invalid){
+            savedNum = output.getText().toString();
+        }
+
+    }
+    public void mmPushed(View view) {updateSum(("-"+savedNum),2);}
     public void acPushed(View view) {output.setText("");}
-    public void pnPushed(View view) {}
+    public void pnPushed(View view) {
+        String currentSum = output.getText().toString();
+        StringBuilder stringBuilder = new StringBuilder(currentSum);
+
+        if (stringBuilder.charAt(0) != '-') {
+            // Remove the '-' sign from the beginning
+            stringBuilder.insert(0, "-");
+        } else {
+            // Add a '+' sign at the beginning
+
+            stringBuilder.deleteCharAt(0);
+        }
+
+        currentSum = stringBuilder.toString();
+
+        updateSum("Error",1);
+        updateSum(currentSum,1);
+
+    }
     public void percentagePushed(View view) {updateSum("%",1);}
     public void TndPushed(View view)
     {
@@ -307,10 +318,8 @@ public class calculator extends AppCompatActivity {
             Button cosh = findViewById(R.id.button_cosh);
             Button tan = findViewById(R.id.button_tan);
             Button tanh = findViewById(R.id.button_tanh);
-            Button tenX = findViewById(R.id.button_10x);
-            Button log10 = findViewById(R.id.button_log10);
-            Button eX = findViewById(R.id.button_ex);
-            Button In = findViewById(R.id.button_In);
+
+
 
             sin.setText("sin⁻¹");
             sinh.setText("sinh⁻¹");
@@ -318,10 +327,7 @@ public class calculator extends AppCompatActivity {
             cosh.setText("cosh⁻¹");
             tan.setText("tan⁻¹");
             tanh.setText("tanh⁻¹");
-            tenX.setText("2ˣ");
-            log10.setText("log₂");
-            eX.setText("yˣ");
-            In.setText("logᵧ");
+
         }
         else
         {
@@ -333,10 +339,8 @@ public class calculator extends AppCompatActivity {
             Button cosh = findViewById(R.id.button_cosh);
             Button tan = findViewById(R.id.button_tan);
             Button tanh = findViewById(R.id.button_tanh);
-            Button tenX = findViewById(R.id.button_10x);
-            Button log10 = findViewById(R.id.button_log10);
-            Button eX = findViewById(R.id.button_ex);
-            Button In = findViewById(R.id.button_In);
+
+
 
             sin.setText("sin");
             sinh.setText("sinh");
@@ -344,85 +348,55 @@ public class calculator extends AppCompatActivity {
             cosh.setText("cosh");
             tan.setText("tan");
             tanh.setText("tanh");
-            tenX.setText("10ˣ");
-            log10.setText("log₁₀");
-            eX.setText("eˣ");
-            In.setText("In");
+
         }
     }
     public void XSquaredPushed(View view) {updateSum("²",1);}
     public void xCubedPushed(View view) {updateSum("³",1);}
     public void xToYPushed(View view) {updateSum("^",1);}
-    public void eToXPushed(View view) {updateSum("^",1);}
-    public void tenToXPushed(View view) {}//TODO
-    public void oneOverXPushed(View view) {}//TODO
-    public void sqrtXPushed(View view) {}//TODO
-    public void cbrtXPushed(View view) {updateSum("∛",1);}//TODO
-    public void yRtXPushed(View view) {}//TODO
-    public void InPushed(View view) {}//TODO
-    public void logPushed(View view) {}//TODO
-    public void xFactPushed(View view) {}//TODO
+    public void eToXPushed(View view) {updateSum("e^",2);}
+    public void tenToXPushed(View view) {updateSum("10^(",4);}
+    public void oneOverXPushed(View view) {updateSum("1÷(",3);}
+    public void sqrtXPushed(View view) {updateSum("√",1);}
+    public void cbrtXPushed(View view) {updateSum("∛",1);}
+    public void twoToXPushed(View view) {updateSum("2^(",3);}
+    public void InPushed(View view) {
+        updateSum("In(",3);
+    }
+    public void logPushed(View view) {updateSum("log₁₀(",6);}
+    public void xFactPushed(View view) {updateSum("!",1);}
 
     public void sinPushed(View view) {
         Button button_sin = findViewById(R.id.button_sin);
-
-        if(output.getText().toString().contains("Error")) {
-            output.setText("");
-            if (button_sin.getText().toString().equals("sin")) {
-                updateSum("sin(",4);
-            } else {
-                updateSum("sin⁻¹(",6);
-            }
-        }
-        else {
-            if (button_sin.getText().toString().equals("sin")) {
-                updateSum("sin(",4);
-            } else {
-                updateSum("sin⁻¹(",6);
-            }
+        if (button_sin.getText().toString().equals("sin")) {
+            updateSum("sin(",4);
+        } else {
+            updateSum("sin⁻¹(",6);
         }
     }
 
     public void cosPushed(View view) {
         Button button_cos = findViewById(R.id.button_cos);
 
-        if(output.getText().toString().contains("Error")) {
-            output.setText("");
-            if (button_cos.getText().toString().equals("cos")) {
-                updateSum("cos(",4);
-            } else {
-                updateSum("cos⁻¹(",6);
-            }
+
+        if (button_cos.getText().toString().equals("cos")) {
+            updateSum("cos(",4);
+        } else {
+            updateSum("cos⁻¹(",6);
         }
-        else {
-            if (button_cos.getText().toString().equals("cos")) {
-                updateSum("cos(",4);
-            } else {
-                updateSum("cos⁻¹(",6);
-            }
-        }
+
     }
     public void tanPushed(View view) {
         Button button_tan = findViewById(R.id.button_tan);
 
-        if(output.getText().toString().contains("Error")) {
-            output.setText("");
-            if (button_tan.getText().toString().equals("tan")) {
-                updateSum("tan(",4);
-            } else {
-                updateSum("tan⁻¹(",6);
-            }
-        }
-        else {
-            if (button_tan.getText().toString().equals("tan")) {
-                updateSum("tan(",4);
-            } else {
-                updateSum("tan⁻¹(",6);
-            }
+        if (button_tan.getText().toString().equals("tan")) {
+            updateSum("tan(",4);
+        } else {
+            updateSum("tan⁻¹(",6);
         }
     }
-    public void ePushed(View view) {}//TODO
-    public void EEPushed(View view) {}///TODO
+    public void ePushed(View view) {updateSum("e",1);}
+    public void log2Pushed(View view) {updateSum("log₂(",5);}
     public void RadPushed(View view) {
 
         Button Rad = findViewById(R.id.button_rad);
@@ -446,70 +420,45 @@ public class calculator extends AppCompatActivity {
     public void sinhPushed(View view) {
         Button button_sinh = findViewById(R.id.button_sinh);
 
-        if(output.getText().toString().contains("Error")) {
-            output.setText("");
-            if (button_sinh.getText().toString().equals("sinh(")) {
-                updateSum("sinh(",5);
-            } else {
-                updateSum("sinh⁻¹(",7);
-            }
+
+        if (button_sinh.getText().toString().equals("sinh(")) {
+            updateSum("sinh(",5);
+        } else {
+            updateSum("sinh⁻¹(",7);
         }
-        else {
-            if (button_sinh.getText().toString().equals("sinh(")) {
-                updateSum("sinh(",5);
-            } else {
-                updateSum("sinh⁻¹(",7);
-            }
-        }
+
     }
     public void coshPushed(View view) {
         Button button_cosh = findViewById(R.id.button_cosh);
 
-        if(output.getText().toString().contains("Error")) {
-            output.setText("");
-            if (button_cosh.getText().toString().equals("cosh(")) {
-                updateSum("cosh(",5);
-            } else {
-                updateSum("cosh⁻¹(",7);
-            }
+        if (button_cosh.getText().toString().equals("cosh(")) {
+            updateSum("cosh(",5);
+        } else {
+            updateSum("cosh⁻¹(",7);
         }
-        else {
-            if (button_cosh.getText().toString().equals("cosh(")) {
-                updateSum("cosh(",5);
-            } else {
-                updateSum("cosh⁻¹(",7);
-            }
-        }
+
     }
     public void tanhPushed(View view) {
         Button button_tanh = findViewById(R.id.button_tanh);
 
-        if(output.getText().toString().contains("Error")) {
-            output.setText("");
-            if (button_tanh.getText().toString().equals("tanh(")) {
-                updateSum("tanh(",5);
-            } else {
-                updateSum("tanh⁻¹(",7);
-            }
+        if (button_tanh.getText().toString().equals("tanh(")) {
+            updateSum("tanh(",5);
+        } else {
+            updateSum("tanh⁻¹(",7);
         }
-        else {
-            if (button_tanh.getText().toString().equals("tanh(")) {
-                updateSum("tanh(",5);
-            } else {
-                updateSum("tanh⁻¹(",7);
-            }
-        }
+
     }
-    public void piPushed(View view) {}
-    public void RandPushed(View view) {}
+    public void piPushed(View view) {updateSum("π",1);}
+    public void RandPushed(View view) {
+
+        double Rand = 0 + Math.random() * (1-0);
+
+        String randToString = String.valueOf(Rand);
+
+        updateSum(randToString,1);
+    }
     public void decPushed(View view) {
-        if(output.getText().toString().contains("Error")){
-            output.setText("");
             updateSum(".",1);
-        }
-        else{
-            updateSum(".",1);
-        }
     }
 
     @Override
@@ -530,11 +479,16 @@ public class calculator extends AppCompatActivity {
                     if (!currentOutput.isEmpty()) {
                         if(currentOutput.equals("Error")){
                             newText = newText.substring(0, newText.length() - 5);
-                            newText = newText.substring(0, newText.length() - 5);
-                        }else {
+                        }else if (currentOutput.equals("Infinity")){
+                            newText = newText.substring(0,newText.length()-8);
+                        }
+                        else if(!lastInputLength.isEmpty()){
                             int index = lastInputLength.size()-1;
                             newText = newText.substring(0, newText.length() - (int)lastInputLength.get(index)); // Perform swipe action
                             lastInputLength.remove(index);
+                        }
+                        else {
+                            newText = newText.substring(0, newText.length() - 1);
                         }
 
                     }
@@ -551,6 +505,16 @@ public class calculator extends AppCompatActivity {
         Intent back = new Intent(calculator.this, MainActivity.class);
         startActivity(back);
 
+    }
+
+
+    public static boolean inArray(char currentChar, char[] charArray){
+        for (char c : charArray){
+            if (currentChar == c){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

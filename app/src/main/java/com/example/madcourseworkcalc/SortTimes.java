@@ -1,7 +1,10 @@
 package com.example.madcourseworkcalc;
 
 import java.util.Comparator;
-
+/**
+ * Sort times class used to order players and their times so that they can be displayed
+ * correctly on the leaderboard
+ */
 public class SortTimes  implements Comparator<Player> {
 
     public int compare(Player player1, Player player2){

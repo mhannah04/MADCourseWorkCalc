@@ -3211,6 +3211,7 @@ id button_1_over_x
 id button_2
 id button_2_Vert
 id button_2nd
+id button_2toX
 id button_3
 id button_3_Vert
 id button_4
@@ -3227,7 +3228,6 @@ id button_9
 id button_9_Vert
 id button_AC
 id button_AC_Vert
-id button_EE
 id button_In
 id button_PN_Vert
 id button_Rand
@@ -3244,6 +3244,7 @@ id button_equals
 id button_equals_Vert
 id button_ex
 id button_log10
+id button_log2
 id button_m_minus
 id button_m_plus
 id button_mc
@@ -3269,7 +3270,6 @@ id button_x2
 id button_x3
 id button_x_fac
 id button_xy
-id button_yrt
 id buttons_layout
 id cache_measures
 id callMeasure
@@ -3560,7 +3560,6 @@ id questionBox
 id radio
 id ratio
 id rectangles
-id relativeLayout2
 id report_drawn
 id reverseSawtooth
 id right
@@ -3593,6 +3592,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id shareButton
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3638,6 +3638,7 @@ id submitNameButton
 id submit_area
 id supportScrollUp
 id tabMode
+id tableLayoutRelativeLayout
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading

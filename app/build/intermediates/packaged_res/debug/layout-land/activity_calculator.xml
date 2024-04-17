@@ -380,13 +380,13 @@
             <Button
                 android:maxLines="1"
                 android:padding="0dp"
-                android:id="@+id/button_yrt"
+                android:id="@+id/button_2toX"
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
                 android:backgroundTint="?attr/buttonType1"
-                android:onClick="yRtXPushed"
-                android:text="ʸ√x"
+                android:onClick="twoToXPushed"
+                android:text="2ˣ"
                 android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
@@ -551,13 +551,13 @@
             <Button
                 android:maxLines="1"
                 android:padding="0dp"
-                android:id="@+id/button_EE"
+                android:id="@+id/button_log2"
                 android:layout_width="56dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
                 android:backgroundTint="?attr/buttonType1"
-                android:onClick="EEPushed"
-                android:text="EE"
+                android:onClick="log2Pushed"
+                android:text="log₂"
                 android:textColor="?attr/textColour"
                 android:textSize="8dp"
                 app:cornerRadius="36dp" />
@@ -746,8 +746,7 @@
 
     </LinearLayout>
     <TextView
-        android:text=""
-        android:textSize="32dp"
+
         android:maxLines="1"
         android:textColor="?attr/textColour"
         android:layout_width="match_parent"
@@ -761,8 +760,10 @@
         android:id="@+id/textView"
         android:gravity="bottom|end"
         android:textColorHint="?attr/textColour"
-        android:hint="0"
-
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeStepGranularity="2sp"
         />
 
 

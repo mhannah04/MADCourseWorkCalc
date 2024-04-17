@@ -3210,6 +3210,7 @@ int id button_1_over_x 0x7f09006a
 int id button_2 0x7f09006b
 int id button_2_Vert 0x7f09006c
 int id button_2nd 0x7f09006d
+int id button_2toX 0x7f09026c
 int id button_3 0x7f09006e
 int id button_3_Vert 0x7f09006f
 int id button_4 0x7f090070
@@ -3226,7 +3227,6 @@ int id button_9 0x7f09007a
 int id button_9_Vert 0x7f09007b
 int id button_AC 0x7f09007c
 int id button_AC_Vert 0x7f09007d
-int id button_EE 0x7f09007e
 int id button_In 0x7f09007f
 int id button_PN_Vert 0x7f090080
 int id button_Rand 0x7f090081
@@ -3243,6 +3243,7 @@ int id button_equals 0x7f09008b
 int id button_equals_Vert 0x7f09008c
 int id button_ex 0x7f09008d
 int id button_log10 0x7f09008e
+int id button_log2 0x7f09026d
 int id button_m_minus 0x7f09008f
 int id button_m_plus 0x7f090090
 int id button_mc 0x7f090091
@@ -3268,7 +3269,6 @@ int id button_x2 0x7f0900a4
 int id button_x3 0x7f0900a5
 int id button_x_fac 0x7f0900a6
 int id button_xy 0x7f0900a7
-int id button_yrt 0x7f0900a8
 int id buttons_layout 0x7f0900a9
 int id cache_measures 0x7f0900aa
 int id callMeasure 0x7f0900ab
@@ -3559,7 +3559,6 @@ int id questionBox 0x7f0901c7
 int id radio 0x7f0901c8
 int id ratio 0x7f0901c9
 int id rectangles 0x7f0901ca
-int id relativeLayout2 0x7f0901cb
 int id report_drawn 0x7f0901cc
 int id reverseSawtooth 0x7f0901cd
 int id right 0x7f0901ce
@@ -3592,6 +3591,7 @@ int id search_voice_btn 0x7f0901e8
 int id select_dialog_listview 0x7f0901e9
 int id selected 0x7f0901ea
 int id selection_type 0x7f0901eb
+int id shareButton 0x7f090269
 int id sharedValueSet 0x7f0901ec
 int id sharedValueUnset 0x7f0901ed
 int id shortcut 0x7f0901ee
@@ -3637,6 +3637,7 @@ int id submitNameButton 0x7f090215
 int id submit_area 0x7f090216
 int id supportScrollUp 0x7f090217
 int id tabMode 0x7f090218
+int id tableLayoutRelativeLayout 0x7f09026a
 int id tag_accessibility_actions 0x7f090219
 int id tag_accessibility_clickable_spans 0x7f09021a
 int id tag_accessibility_heading 0x7f09021b

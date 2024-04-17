@@ -1,5 +1,10 @@
 package com.example.madcourseworkcalc;
 
+/**
+ * Player class used for saving player data to shared preferences
+ */
+
+
 public class Player {
     private String name;
     private String number;
@@ -37,9 +42,6 @@ public class Player {
     public void setDate(String name){
         this.date=date;
     }
-
-
-
 
 
 }

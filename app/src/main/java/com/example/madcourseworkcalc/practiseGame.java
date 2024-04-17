@@ -12,7 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
+/**
+ * practise game class used to allow the player to input their chosen times table
+ * suitable error handling put into place
+ */
 public class practiseGame extends AppCompatActivity {
 
     public static EditText reqNum;
