@@ -85,7 +85,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\maxha\.gradle\cach
 	android:supportsRtl
 		ADDED from C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:11:9-41
+		ADDED from C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:11:9-40
 	android:fullBackupContent
 		ADDED from C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:9:9-54
 	tools:targetApi
