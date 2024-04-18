@@ -62,6 +62,7 @@ public class calculator extends AppCompatActivity {
              if (change > 15)
              {
                  output.setText("");
+                 lastInputLength.clear();
              }
         }
         @Override
