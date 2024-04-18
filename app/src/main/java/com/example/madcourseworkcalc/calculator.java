@@ -27,6 +27,7 @@ import java.util.ArrayList;
  * Code also makes use of a movement sensor, on the event of the user shaking the phone enough
  * the screen will clear
  * Additionally, if the user swipes the screen then the furthest digit on the right will be removed
+ * https://mathparser.org/ This is the library source
  */
 
 
