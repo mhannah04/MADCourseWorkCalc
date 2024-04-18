@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -411,6 +412,8 @@ public class GamePT2 extends AppCompatActivity {
                 answerBox.setVisibility(View.GONE);
                 questionBox.setVisibility(View.GONE);
                 Timer.bringToFront();
+                Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v.vibrate(50);
             }
 
             @Override

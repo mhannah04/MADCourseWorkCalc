@@ -79,8 +79,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\maxha\OneDrive\rollback\app\src\main\res\drawable\baseline_arrow_back_24.xml" />
-                                                <entry key="scalingPercent" value="38" />
+                                                <entry key="imagePath" value="C:\Users\maxha\OneDrive\Pictures\appLogo.png" />
+                                                <entry key="scalingPercent" value="61" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -117,9 +117,9 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="foregroundAssetType" value="TEXT" />
+                                      <entry key="backgroundColor" value="fd9600" />
                                       <entry key="legacyIconShape" value="CIRCLE" />
-                                      <entry key="outputName" value="back_arrow" />
+                                      <entry key="outputName" value="logo" />
                                       <entry key="previewDensity" value="HIGH" />
                                     </map>
                                   </option>

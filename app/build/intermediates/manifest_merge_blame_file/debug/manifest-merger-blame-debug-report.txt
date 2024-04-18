@@ -8,75 +8,75 @@
 8        android:minSdkVersion="24"
 9        android:targetSdkVersion="34" />
 10
-11    <permission
-11-->[androidx.core:core:1.9.0] C:\Users\maxha\.gradle\caches\transforms-3\baef89d70f13c7cf2c807b99df8a18bc\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-12        android:name="com.example.madcourseworkcalc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-12-->[androidx.core:core:1.9.0] C:\Users\maxha\.gradle\caches\transforms-3\baef89d70f13c7cf2c807b99df8a18bc\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-13        android:protectionLevel="signature" />
-13-->[androidx.core:core:1.9.0] C:\Users\maxha\.gradle\caches\transforms-3\baef89d70f13c7cf2c807b99df8a18bc\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
-14
-15    <uses-permission android:name="com.example.madcourseworkcalc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-15-->[androidx.core:core:1.9.0] C:\Users\maxha\.gradle\caches\transforms-3\baef89d70f13c7cf2c807b99df8a18bc\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-15-->[androidx.core:core:1.9.0] C:\Users\maxha\.gradle\caches\transforms-3\baef89d70f13c7cf2c807b99df8a18bc\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+11    <uses-permission android:name="android.permission.VIBRATE" />
+11-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:4:5-65
+11-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:4:22-63
+12
+13    <permission
+13-->[androidx.core:core:1.9.0] C:\Users\maxha\.gradle\caches\transforms-3\baef89d70f13c7cf2c807b99df8a18bc\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+14        android:name="com.example.madcourseworkcalc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+14-->[androidx.core:core:1.9.0] C:\Users\maxha\.gradle\caches\transforms-3\baef89d70f13c7cf2c807b99df8a18bc\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+15        android:protectionLevel="signature" />
+15-->[androidx.core:core:1.9.0] C:\Users\maxha\.gradle\caches\transforms-3\baef89d70f13c7cf2c807b99df8a18bc\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 16
-17    <application
-17-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:5:5-36:19
-18        android:allowBackup="true"
-18-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:6:9-35
-19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.9.0] C:\Users\maxha\.gradle\caches\transforms-3\baef89d70f13c7cf2c807b99df8a18bc\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-20        android:dataExtractionRules="@xml/data_extraction_rules"
-20-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:7:9-65
-21        android:debuggable="true"
-22        android:extractNativeLibs="false"
-23        android:fullBackupContent="@xml/backup_rules"
-23-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:8:9-54
-24        android:label="@string/app_name"
-24-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:10:9-41
-25        android:supportsRtl="true"
-25-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:12:9-35
-26        android:testOnly="true"
-27        android:theme="@style/Theme.MADCourseWorkCalc" >
-27-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:13:9-55
-28        <activity
-28-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:15:9-17:40
-29            android:name="com.example.madcourseworkcalc.GamePT2"
-29-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:16:13-36
-30            android:exported="false" />
-30-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:17:13-37
+17    <uses-permission android:name="com.example.madcourseworkcalc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+17-->[androidx.core:core:1.9.0] C:\Users\maxha\.gradle\caches\transforms-3\baef89d70f13c7cf2c807b99df8a18bc\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.9.0] C:\Users\maxha\.gradle\caches\transforms-3\baef89d70f13c7cf2c807b99df8a18bc\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+18
+19    <application
+19-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:5:5-35:19
+20        android:allowBackup="true"
+20-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:7:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.9.0] C:\Users\maxha\.gradle\caches\transforms-3\baef89d70f13c7cf2c807b99df8a18bc\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+22        android:dataExtractionRules="@xml/data_extraction_rules"
+22-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:8:9-65
+23        android:debuggable="true"
+24        android:extractNativeLibs="false"
+25        android:fullBackupContent="@xml/backup_rules"
+25-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:9:9-54
+26        android:icon="@mipmap/logo"
+26-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:10:9-36
+27        android:label="@string/app_name"
+27-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:11:9-41
+28        android:supportsRtl="true"
+28-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:13:9-35
+29        android:testOnly="true"
+30        android:theme="@style/Theme.MADCourseWorkCalc" >
+30-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:14:9-55
 31        <activity
-31-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:18:9-20:40
-32            android:name="com.example.madcourseworkcalc.practiseGame"
-32-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:19:13-41
+31-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:16:9-18:40
+32            android:name="com.example.madcourseworkcalc.GamePT2"
+32-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:17:13-36
 33            android:exported="false" />
-33-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:20:13-37
+33-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:18:13-37
 34        <activity
-34-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:21:9-23:40
-35            android:name="com.example.madcourseworkcalc.converter"
-35-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:22:13-38
+34-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:19:9-21:40
+35            android:name="com.example.madcourseworkcalc.practiseGame"
+35-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:20:13-41
 36            android:exported="false" />
-36-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:23:13-37
+36-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:21:13-37
 37        <activity
-37-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:24:9-26:40
+37-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:23:9-25:40
 38            android:name="com.example.madcourseworkcalc.calculator"
-38-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:25:13-39
+38-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:24:13-39
 39            android:exported="false" />
-39-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:26:13-37
+39-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:25:13-37
 40        <activity
-40-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:27:9-35:20
+40-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:26:9-34:20
 41            android:name="com.example.madcourseworkcalc.MainActivity"
-41-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:28:13-41
+41-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:27:13-41
 42            android:exported="true" >
-42-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:29:13-36
+42-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:28:13-36
 43            <intent-filter>
-43-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:30:13-34:29
+43-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:29:13-33:29
 44                <action android:name="android.intent.action.MAIN" />
-44-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:31:17-69
-44-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:31:25-66
+44-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:30:17-69
+44-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:30:25-66
 45
 46                <category android:name="android.intent.category.LAUNCHER" />
-46-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:33:17-77
-46-->C:\Users\maxha\OneDrive\rollback\app\src\main\AndroidManifest.xml:33:27-74
+46-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:32:17-77
+46-->C:\Users\maxha\OneDrive\MADCourseWorkCalc3\app\src\main\AndroidManifest.xml:32:27-74
 47            </intent-filter>
 48        </activity>
 49
